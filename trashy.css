@@ -7,6 +7,30 @@ Set default sans-serif.
 }
 
 /*
+Spacing.
+==================================================*/
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+/*
 Links.
 ==================================================*/
 
@@ -55,30 +79,6 @@ figure img {
 }
 
 /*
-Spacing.
-==================================================*/
-
-p,
-dl,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-pre,
-table,
-address,
-fieldset,
-figure {
-  margin: 0;
-  margin-bottom: 1.5rem;
-}
-
-/*
 Body styles.
 ==================================================*/
 
@@ -97,6 +97,15 @@ body {
   padding-top: 1.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+/*
+Horizontal rule.
+==================================================*/
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 /*
@@ -233,6 +242,37 @@ h6 {
 }
 
 /*
+Blockquote.
+==================================================*/
+
+blockquote {
+  border-left: 5px solid #eee;
+  margin: 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+blockquote::before,
+blockquote::after {
+  content: "";
+  background: #eee;
+
+  width: 5px;
+  height: 5px;
+
+  position: absolute;
+  left: 0;
+}
+
+blockquote::before {
+  top: 0;
+}
+
+blockquote::after {
+  bottom: 0;
+}
+
+/*
 Tables.
 ==================================================*/
 
@@ -244,6 +284,7 @@ th,
 td {
   padding: 0.5rem 0.25rem;
   text-align: left;
+  vertical-align: top;
 }
 
 td {
