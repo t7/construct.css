@@ -16,15 +16,11 @@ img:not([alt]) {
 }
 
 /*
-Pointer cursor.
+Links.
 ==================================================*/
 
-a:not([disabled]),
-button:not([disabled]),
-input[type="button"]:not([disabled]),
-input[type="reset"]:not([disabled]),
-input[type="submit"]:not([disabled]) {
-  cursor: pointer;
+a:not([class]) {
+  color: #00f;
 }
 
 /*
@@ -34,6 +30,18 @@ Disabled state.
 [disabled] {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+/*
+Pointer cursor.
+==================================================*/
+
+a:not([disabled]),
+button:not([disabled]),
+input[type="button"]:not([disabled]),
+input[type="reset"]:not([disabled]),
+input[type="submit"]:not([disabled]) {
+  cursor: pointer;
 }
 
 /*
@@ -61,8 +69,13 @@ figure {
 }
 
 /*
-Prevent `<body>` from going too wide.
+Body styles.
 ==================================================*/
+
+html {
+  background: #fff;
+  color: #333;
+}
 
 body {
   max-width: 900px;
@@ -168,6 +181,13 @@ td {
 /*
 Form elements.
 ==================================================*/
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+}
 
 /* Buttons. */
 button,
