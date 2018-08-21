@@ -7,202 +7,255 @@
 <title>Trashy.css - The throwaway CSS library with no class</title>
 <link rel="stylesheet" href="./sanitize.css" />
 <link rel="stylesheet" href="./trashy.css" />
+<link rel="stylesheet" href="./trashy.debug.css" />
 </head>
 <body>
 
-<article>
+<header>
 
   <h1>
     Heading level 1
   </h1>
 
-  <h2>
-    Heading level 2
-  </h2>
+  <nav>
+    <ul>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </ul>
+  </nav>
 
-  <h3>
-    Heading level 3
-  </h3>
+</header>
 
-  <h4>
-    Heading level 4
-  </h4>
+<main>
 
-  <h5>
-    Heading level 5
-  </h5>
+  <article>
 
-  <h6>
-    Heading level 6
-  </h6>
+    <h2>
+      Heading level 2
+    </h2>
 
-  <section>
+    <h3>
+      Heading level 3
+    </h3>
 
-    <p>
-      <a href="https://www.example.com/">
-        https://www.example.com/
-      </a>
-    </p>
+    <h4>
+      Heading level 4
+    </h4>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <h5>
+      Heading level 5
+    </h5>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <h6>
+      Heading level 6
+    </h6>
 
-  </section>
+    <section>
 
-</article>
+      <p>
+        <a href="https://www.example.com/">
+          https://www.example.com/
+        </a>
+      </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>
-        Uno
-      </th>
-      <th>
-        Dos
-      </th>
-      <th>
-        Tres
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        Value 1
-      </td>
-      <td>
-        Value 2
-      </td>
-      <td>
-        Value 3
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Value 1
-      </td>
-      <td>
-        Value 2
-      </td>
-      <td>
-        Value 3
-      </td>
-    </tr>
-  </tbody>
-</table>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
 
-<form onsubmit="return false">
+      <ol>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+      </ol>
 
-  <fieldset>
+      <ul>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+      </ul>
 
-    <legend>
-      Text inputs
-    </legend>
+    </section>
 
-    <p>
-      <label for="INPUT_ID_1">
-        Label for input
-      </label>
-      <input id="INPUT_ID_1" type="text" />
-    </p>
+  </article>
 
-    <p>
-      <label for="INPUT_ID_2">
-        Label for input
-      </label>
-      <input id="INPUT_ID_2" type="text" disabled="disabled" />
-    </p>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Uno
+        </th>
+        <th>
+          Dos
+        </th>
+        <th>
+          Tres
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Value 1
+        </td>
+        <td>
+          Value 2
+        </td>
+        <td>
+          Value 3
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Value 1
+        </td>
+        <td>
+          Value 2
+        </td>
+        <td>
+          Value 3
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-  </fieldset>
+  <form onsubmit="return false">
 
-  <fieldset>
+    <fieldset>
 
-    <legend>
-      Select drop-downs
-    </legend>
+      <legend>
+        Text inputs
+      </legend>
 
-    <p>
-      <label for="SELECT_ID_1">
-        Label for select
-      </label>
-      <select id="SELECT_ID_1">
-        <option value="">--</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </p>
+      <p>
+        <label for="INPUT_ID_1">
+          Label for input
+        </label>
+        <input id="INPUT_ID_1" type="text" />
+      </p>
 
-    <p>
-      <label for="SELECT_ID_2">
-        Label for select
-      </label>
-      <select id="SELECT_ID_2" disabled="disabled">
-        <option value="">--</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </select>
-    </p>
+      <p>
+        <label for="INPUT_ID_2">
+          Label for input
+        </label>
+        <input id="INPUT_ID_2" type="text" disabled="disabled" />
+      </p>
 
-  </fieldset>
+    </fieldset>
 
-  <fieldset>
+    <fieldset>
 
-    <legend>
-      Multi-line textareas
-    </legend>
+      <legend>
+        Select drop-downs
+      </legend>
 
-    <p>
-      <label for="TEXTAREA_ID_1">
-        Label for textarea
-      </label>
-      <textarea id="TEXTAREA_ID_1"></textarea>
-    </p>
+      <p>
+        <label for="SELECT_ID_1">
+          Label for select
+        </label>
+        <select id="SELECT_ID_1">
+          <option value="">--</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </p>
 
-    <p>
-      <label for="TEXTAREA_ID_2">
-        Label for textarea
-      </label>
-      <textarea id="TEXTAREA_ID_2" disabled="disabled"></textarea>
-    </p>
+      <p>
+        <label for="SELECT_ID_2">
+          Label for select
+        </label>
+        <select id="SELECT_ID_2" disabled="disabled">
+          <option value="">--</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </p>
 
-  </fieldset>
+    </fieldset>
 
-  <fieldset>
+    <fieldset>
 
-    <legend>
-      Buttons
-    </legend>
+      <legend>
+        Multi-line textareas
+      </legend>
 
-    <p>
-      <button>Button tag</button>
-      <button disabled="disabled">Button tag</button>
-    </p>
+      <p>
+        <label for="TEXTAREA_ID_1">
+          Label for textarea
+        </label>
+        <textarea id="TEXTAREA_ID_1"></textarea>
+      </p>
 
-    <p>
-      <input type="button" value="Input: Button" />
-      <input type="button" value="Input: Button" disabled="disabled" />
-    </p>
+      <p>
+        <label for="TEXTAREA_ID_2">
+          Label for textarea
+        </label>
+        <textarea id="TEXTAREA_ID_2" disabled="disabled"></textarea>
+      </p>
 
-    <p>
-      <input type="reset" value="Input: Reset" />
-      <input type="reset" value="Input: Reset" disabled="disabled" />
-    </p>
+    </fieldset>
 
-    <p>
-      <input type="submit" value="Input: Submit" />
-      <input type="submit" value="Input: Submit" disabled="disabled" />
-    </p>
+    <fieldset>
 
-  </fieldset>
+      <legend>
+        Buttons
+      </legend>
 
-</form>
+      <p>
+        <button>Button tag</button>
+        <button disabled="disabled">Button tag</button>
+      </p>
+
+      <p>
+        <input type="button" value="Input: Button" />
+        <input type="button" value="Input: Button" disabled="disabled" />
+      </p>
+
+      <p>
+        <input type="reset" value="Input: Reset" />
+        <input type="reset" value="Input: Reset" disabled="disabled" />
+      </p>
+
+      <p>
+        <input type="submit" value="Input: Submit" />
+        <input type="submit" value="Input: Submit" disabled="disabled" />
+      </p>
+
+    </fieldset>
+
+  </form>
+
+</main>
+
+<footer>
+
+  <p>
+    <small>
+      &copy; Example Co. Legal stuff here.
+    </small>
+  </p>
+
+</footer>
 
 </body>
 </html>

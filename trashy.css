@@ -7,20 +7,16 @@ Set default sans-serif.
 }
 
 /*
-Flag "invalid" markup.
-==================================================*/
-
-[class],
-img:not([alt]) {
-  outline: 2px solid red;
-}
-
-/*
 Links.
 ==================================================*/
 
 a:not([class]) {
   color: #00f;
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  text-decoration: underline;
 }
 
 /*
@@ -94,7 +90,11 @@ body {
 ==================================================*/
 
 article,
+footer,
 form,
+header,
+main,
+nav,
 section {
   border: 1px solid #ccc;
   position: relative;
@@ -107,7 +107,11 @@ section {
 }
 
 article::before,
+footer::before,
 form::before,
+header::before,
+main::before,
+nav::before,
 section::before {
   color: #ccc;
   font-size: 9px;
@@ -124,12 +128,54 @@ article::before {
   content: "article";
 }
 
+footer::before {
+  content: "footer";
+}
+
 form::before {
   content: "form";
 }
 
+header::before {
+  content: "header";
+}
+
+main::before {
+  content: "main";
+}
+
+nav::before {
+  content: "nav";
+}
+
 section::before {
   content: "section";
+}
+
+/*
+Header: Nav.
+==================================================*/
+
+header nav > ul,
+header nav > ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+header nav > ul {
+  font-size: 0;
+  margin-bottom: 1.5rem;
+}
+
+header nav ul > li {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+header nav ul > li + li {
+  border-left: 1px solid #ccc;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 /*
@@ -247,7 +293,7 @@ input[type="url"],
 input[type="week"],
 select,
 textarea {
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #000;
   height: 2rem;
   padding-left: 0.5rem;
@@ -270,7 +316,13 @@ input[disabled][type="url"],
 input[disabled][type="week"],
 select[disabled],
 textarea[disabled] {
-  background: #eee;
+  background-color: #eee;
+}
+
+select {
+  background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 textarea {
