@@ -1,0 +1,54 @@
+/*
+Flag "invalid" markup.
+==================================================*/
+
+[class],
+img:not([alt]) {
+  outline: 2px solid red;
+}
+
+/*
+Set default sans-serif.
+==================================================*/
+
+* {
+  font-family: sans-serif;
+}
+
+/*
+Prevent `<body>` from going too wide.
+==================================================*/
+
+body {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+Headings.
+==================================================*/
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 2.0rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
