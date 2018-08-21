@@ -116,12 +116,12 @@ section::before {
   color: #ccc;
   font-size: 9px;
   letter-spacing: 1px;
-  padding-right: 2px;
+  padding-left: 3px;
   text-transform: uppercase;
 
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
 }
 
 article::before {
