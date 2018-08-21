@@ -1,8 +1,16 @@
 /*
+If disallowing `class="…"`.
+==================================================*/
+
+[class] {
+  outline: 2px solid red;
+}
+
+/*
 Flag "invalid" markup.
 ==================================================*/
 
-[class],
-img:not([alt]) {
+img:not([alt]),
+label:not([for]) {
   outline: 2px solid red;
 }

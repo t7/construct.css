@@ -41,6 +41,20 @@ input[type="submit"]:not([disabled]) {
 }
 
 /*
+Images.
+==================================================*/
+
+img {
+  max-width: 100%;
+}
+
+figure img {
+  display: block;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+/*
 Spacing.
 ==================================================*/
 
@@ -90,6 +104,8 @@ body {
 ==================================================*/
 
 article,
+figure,
+figcaption,
 footer,
 form,
 header,
@@ -107,6 +123,8 @@ section {
 }
 
 article::before,
+figure::before,
+figcaption::before,
 footer::before,
 form::before,
 header::before,
@@ -126,6 +144,14 @@ section::before {
 
 article::before {
   content: "article";
+}
+
+figure::before {
+  content: "figure";
+}
+
+figcaption::before {
+  content: "figcaption";
 }
 
 footer::before {
@@ -294,7 +320,7 @@ input[type="week"],
 select,
 textarea {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #333;
   height: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -329,6 +355,15 @@ textarea {
   min-height: 4rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
+}
+
+/*
+Radios & Checkboxes.
+==================================================*/
+
+label input[type="checkbox"],
+label input[type="radio"] {
+  margin-right: 0.25rem;
 }
 
 /*
