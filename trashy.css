@@ -1,4 +1,12 @@
 /*
+Set default sans-serif.
+==================================================*/
+
+* {
+  font-family: sans-serif;
+}
+
+/*
 Flag "invalid" markup.
 ==================================================*/
 
@@ -8,11 +16,35 @@ img:not([alt]) {
 }
 
 /*
-Set default sans-serif.
+Disabled state.
 ==================================================*/
 
-* {
-  font-family: sans-serif;
+[disabled] {
+  opacity: 0.5;
+}
+
+/*
+Spacing.
+==================================================*/
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 /*
@@ -23,6 +55,45 @@ body {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
+  padding-top: 1.5rem;
+}
+
+/*
+Article & Section.
+==================================================*/
+
+article,
+section {
+  border: 1px solid #ccc;
+  position: relative;
+
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+article::before,
+section::before {
+  color: #ccc;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding-right: 2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+article::before {
+  content: "article";
+}
+
+section::before {
+  content: "section";
 }
 
 /*
@@ -34,7 +105,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -51,4 +122,117 @@ h5 {
 
 h6 {
   font-size: 1.2rem;
+}
+
+/*
+Tables.
+==================================================*/
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 0.5rem 0.25rem;
+  text-align: left;
+}
+
+td {
+  border-top: 1px solid #ccc;
+}
+
+/*
+Form elements.
+==================================================*/
+
+/* Buttons. */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+/* Inputs. */
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/*
+Buttons.
+==================================================*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background: #666;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+/*
+Inputs.
+==================================================*/
+
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+  background: #fff;
+  border: 1px solid #000;
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+
+textarea {
+  min-height: 4rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+/*
+Fieldset.
+==================================================*/
+
+fieldset {
+  border: 1px solid #ccc;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0;
+}
+
+legend {
+  margin-left: -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
