@@ -16,10 +16,23 @@ img:not([alt]) {
 }
 
 /*
+Pointer cursor.
+==================================================*/
+
+a:not([disabled]),
+button:not([disabled]),
+input[type="button"]:not([disabled]),
+input[type="reset"]:not([disabled]),
+input[type="submit"]:not([disabled]) {
+  cursor: pointer;
+}
+
+/*
 Disabled state.
 ==================================================*/
 
 [disabled] {
+  cursor: not-allowed;
   opacity: 0.5;
 }
 
@@ -55,15 +68,20 @@ body {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+
   line-height: 1.5;
+
   padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /*
-Article & Section.
+"Box" level elements.
 ==================================================*/
 
 article,
+form,
 section {
   border: 1px solid #ccc;
   position: relative;
@@ -76,6 +94,7 @@ section {
 }
 
 article::before,
+form::before,
 section::before {
   color: #ccc;
   font-size: 9px;
@@ -90,6 +109,10 @@ section::before {
 
 article::before {
   content: "article";
+}
+
+form::before {
+  content: "form";
 }
 
 section::before {
@@ -182,7 +205,6 @@ input[type="submit"] {
   background: #666;
   border: 0;
   color: #fff;
-  cursor: pointer;
   padding: 0.5rem 1rem;
 }
 
@@ -211,6 +233,24 @@ textarea {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
+}
+
+input[disabled][type="date"],
+input[disabled][type="datetime"],
+input[disabled][type="datetime-local"],
+input[disabled][type="email"],
+input[disabled][type="month"],
+input[disabled][type="number"],
+input[disabled][type="password"],
+input[disabled][type="search"],
+input[disabled][type="tel"],
+input[disabled][type="text"],
+input[disabled][type="time"],
+input[disabled][type="url"],
+input[disabled][type="week"],
+select[disabled],
+textarea[disabled] {
+  background: #eee;
 }
 
 textarea {

@@ -90,55 +90,113 @@
   </tbody>
 </table>
 
-<fieldset>
+<form onsubmit="return false">
 
-  <legend>
-    Fieldset legend
-  </legend>
+  <fieldset>
 
-  <p>
-    <label for="INPUT_ID">
-      Label for input
-    </label>
-    <input id="INPUT_ID" type="text" />
-  </p>
+    <legend>
+      Text inputs
+    </legend>
 
-  <p>
-    <label for="SELECT_ID">
-      Label for select
-    </label>
-    <select id="SELECT_ID">
-      <option value="">--</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-  </p>
+    <p>
+      <label for="INPUT_ID_1">
+        Label for input
+      </label>
+      <input id="INPUT_ID_1" type="text" />
+    </p>
 
-  <p>
-    <label for="TEXTAREA_ID">
-      Label for textarea
-    </label>
-    <textarea id="TEXTAREA_ID"></textarea>
-  </p>
+    <p>
+      <label for="INPUT_ID_2">
+        Label for input
+      </label>
+      <input id="INPUT_ID_2" type="text" disabled="disabled" />
+    </p>
 
-  <p>
-    <button>Button tag</button>
-  </p>
+  </fieldset>
 
-  <p>
-    <input type="button" value="Input: Button" />
-  </p>
+  <fieldset>
 
-  <p>
-    <input type="reset" value="Input: Reset" />
-  </p>
+    <legend>
+      Select drop-downs
+    </legend>
 
-  <p>
-    <input type="submit" value="Input: Submit" />
-  </p>
+    <p>
+      <label for="SELECT_ID_1">
+        Label for select
+      </label>
+      <select id="SELECT_ID_1">
+        <option value="">--</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </p>
 
-</fieldset>
+    <p>
+      <label for="SELECT_ID_2">
+        Label for select
+      </label>
+      <select id="SELECT_ID_2" disabled="disabled">
+        <option value="">--</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </p>
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend>
+      Multi-line textareas
+    </legend>
+
+    <p>
+      <label for="TEXTAREA_ID_1">
+        Label for textarea
+      </label>
+      <textarea id="TEXTAREA_ID_1"></textarea>
+    </p>
+
+    <p>
+      <label for="TEXTAREA_ID_2">
+        Label for textarea
+      </label>
+      <textarea id="TEXTAREA_ID_2" disabled="disabled"></textarea>
+    </p>
+
+  </fieldset>
+
+  <fieldset>
+
+    <legend>
+      Buttons
+    </legend>
+
+    <p>
+      <button>Button tag</button>
+      <button disabled="disabled">Button tag</button>
+    </p>
+
+    <p>
+      <input type="button" value="Input: Button" />
+      <input type="button" value="Input: Button" disabled="disabled" />
+    </p>
+
+    <p>
+      <input type="reset" value="Input: Reset" />
+      <input type="reset" value="Input: Reset" disabled="disabled" />
+    </p>
+
+    <p>
+      <input type="submit" value="Input: Submit" />
+      <input type="submit" value="Input: Submit" disabled="disabled" />
+    </p>
+
+  </fieldset>
+
+</form>
 
 </body>
 </html>
