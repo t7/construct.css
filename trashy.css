@@ -7,6 +7,10 @@
   `62.5%` adjustment to the `<html>` size.
 */
 
+/*
+Variables.
+==================================================*/
+
 :root {
   --body-font-size: 1.5rem;
   --spacing: 2rem;
@@ -19,7 +23,7 @@ Set defaults.
 * {
   color: inherit;
   font-family: sans-serif;
-  text-rendering: optimizeSpeed
+  text-rendering: optimizeSpeed;
 }
 
 /*
@@ -354,6 +358,7 @@ Radios & Checkboxes.
 label input[type="checkbox"],
 label input[type="radio"] {
   margin-right: 0.5rem;
+  vertical-align: middle;
 }
 
 /*
