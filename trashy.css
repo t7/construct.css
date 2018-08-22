@@ -1,10 +1,10 @@
 /*
   NOTE:
 
-  Throughout this file, the `1rem` is equal
-  to `10px`, assuming a browser default of
-  `16px` font size. This is set via the
-  `62.5%` adjustment to the html tag.
+  Throughout this file, `1rem` is equal to
+  `10px`, assuming a browser's default font
+  size of `16px`. This is set by applying a
+  `62.5%` adjustment to the `<html>` size.
 */
 
 :root {
