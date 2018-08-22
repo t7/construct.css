@@ -45,6 +45,24 @@ body {
 }
 
 /*
+Horizontal rule.
+==================================================*/
+
+hr {
+  border-top-style: dashed;
+  border-top-width: 2px;
+}
+
+/*
+Tables.
+==================================================*/
+
+td {
+  border-top-width: 2px;
+  border-top-style: dashed;
+}
+
+/*
 Buttons.
 ==================================================*/
 
