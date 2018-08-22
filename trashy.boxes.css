@@ -1,0 +1,161 @@
+/*
+"Box" level elements.
+==================================================*/
+
+article,
+figure,
+figcaption,
+footer,
+form,
+header,
+main,
+nav,
+section {
+  border: 1px solid #ccc;
+  position: relative;
+
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  margin-bottom: 1.5rem;
+}
+
+article::before,
+article::after,
+figure::before,
+figure::after,
+figcaption::before,
+figcaption::after,
+footer::before,
+footer::after,
+form::before,
+form::after,
+header::before,
+header::after,
+main::before,
+main::after,
+nav::before,
+nav::after,
+section::before,
+section::after {
+  color: #f0f;
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/*
+==============
+BOXES: BEFORE.
+==============
+*/
+
+article::before,
+figure::before,
+figcaption::before,
+footer::before,
+form::before,
+header::before,
+main::before,
+nav::before,
+section::before {
+  padding-left: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+article::before {
+  content: "article";
+}
+
+figure::before {
+  content: "figure";
+}
+
+figcaption::before {
+  content: "figcaption";
+}
+
+footer::before {
+  content: "footer";
+}
+
+form::before {
+  content: "form";
+}
+
+header::before {
+  content: "header";
+}
+
+main::before {
+  content: "main";
+}
+
+nav::before {
+  content: "nav";
+}
+
+section::before {
+  content: "section";
+}
+
+/*
+=============
+BOXES: AFTER.
+=============
+*/
+
+article::after,
+figure::after,
+figcaption::after,
+footer::after,
+form::after,
+header::after,
+main::after,
+nav::after,
+section::after {
+  padding-right: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+article::after {
+  content: "/article";
+}
+
+figure::after {
+  content: "/figure";
+}
+
+figcaption::after {
+  content: "/figcaption";
+}
+
+footer::after {
+  content: "/footer";
+}
+
+form::after {
+  content: "/form";
+}
+
+header::after {
+  content: "/header";
+}
+
+main::after {
+  content: "/main";
+}
+
+nav::after {
+  content: "/nav";
+}
+
+section::after {
+  content: "/section";
+}
