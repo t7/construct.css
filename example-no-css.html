@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>Trashy.css - The throwaway CSS library with no class</title>
+</head>
+<body>
+
+<header role="banner">
+
+  <h1>
+    Heading level 1
+  </h1>
+
+  <nav role="navigation">
+    <ul>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+</header>
+
+<main role="main">
+
+  <article>
+
+    <figure>
+      <a href="https://example.com/">
+        <img
+          alt="Example image"
+          src="https://picsum.photos/900/500"
+        />
+      </a>
+      <figcaption>
+        <p>
+          Image description
+        </p>
+      </figcaption>
+    </figure>
+
+    <h2>
+      Heading level 2
+    </h2>
+
+    <h3>
+      Heading level 3
+    </h3>
+
+    <h4>
+      Heading level 4
+    </h4>
+
+    <h5>
+      Heading level 5
+    </h5>
+
+    <h6>
+      Heading level 6
+    </h6>
+
+    <section>
+
+      <p>
+        This is an example of regular paragraph text. It also has some <code>example.code(true)</code> within it.
+      </p>
+
+      <blockquote>
+
+        <p>
+          <i>
+            Example blockquote…
+          </i>
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </blockquote>
+
+    </section>
+
+    <aside>
+
+      <p>
+        <a href="https://www.example.com/">
+          https://www.example.com/
+        </a>
+      </p>
+
+      <hr />
+
+      <ol>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+      </ol>
+
+      <ul>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+        <li>
+          List item
+        </li>
+      </ul>
+
+    </aside>
+
+  </article>
+
+  <p>
+    Example <code>&lt;pre&gt;</code> code block…
+  </p>
+
+<pre><code>// Example function.
+const myFunction = (o = {}) => {
+  // Peel apart.
+  const {
+    foo,
+    bar
+  } = o
+
+  // Log values.
+  console.log(foo, bar)
+}</code></pre>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Uno
+        </th>
+        <th>
+          Dos
+        </th>
+        <th>
+          Tres
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Value 1
+          <br />
+          Tall content
+        </td>
+        <td>
+          Value 2
+        </td>
+        <td>
+          Value 3
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Value 1
+          <br />
+          Tall content
+        </td>
+        <td>
+          Value 2
+        </td>
+        <td>
+          Value 3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form onsubmit="return false">
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="date"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_DATE_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_DATE_ID_1"
+          type="date"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_DATE_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_DATE_ID_2"
+          type="date"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="email"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_EMAIL_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_EMAIL_ID_1"
+          type="email"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_EMAIL_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_EMAIL_ID_2"
+          type="email"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="month"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_MONTH_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_MONTH_ID_1"
+          type="month"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_MONTH_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_MONTH_ID_2"
+          type="month"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="number"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_NUMBER_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_NUMBER_ID_1"
+          type="number"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_NUMBER_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_NUMBER_ID_2"
+          type="number"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="password"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_PASSWORD_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_PASSWORD_ID_1"
+          type="password"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_PASSWORD_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_PASSWORD_ID_2"
+          type="password"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="search"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_SEARCH_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_SEARCH_ID_1"
+          type="search"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_SEARCH_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_SEARCH_ID_2"
+          type="search"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="tel"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_TEL_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TEL_ID_1"
+          type="tel"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_TEL_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TEL_ID_2"
+          type="tel"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="text"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_TEXT_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TEXT_ID_1"
+          type="text"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_TEXT_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TEXT_ID_2"
+          type="text"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="time"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_TIME_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TIME_ID_1"
+          type="time"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_TIME_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_TIME_ID_2"
+          type="time"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="url"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_URL_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_URL_ID_1"
+          type="url"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_URL_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_URL_ID_2"
+          type="url"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Input <code>type="week"</code>
+      </legend>
+
+      <p>
+        <label for="INPUT_WEEK_ID_1">
+          Label for input
+        </label>
+        <input
+          id="INPUT_WEEK_ID_1"
+          type="week"
+        />
+      </p>
+
+      <p>
+        <label for="INPUT_WEEK_ID_2">
+          Label for input
+        </label>
+        <input
+          id="INPUT_WEEK_ID_2"
+          type="week"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Select drop-down
+      </legend>
+
+      <p>
+        <label for="SELECT_ID_1">
+          Label for select
+        </label>
+        <select id="SELECT_ID_1">
+          <option value="">--</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="SELECT_ID_2">
+          Label for select
+        </label>
+        <select id="SELECT_ID_2" disabled="disabled">
+          <option value="">--</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Multi-line textarea
+      </legend>
+
+      <p>
+        <label for="TEXTAREA_ID_1">
+          Label for textarea
+        </label>
+        <textarea
+          id="TEXTAREA_ID_1"
+        ></textarea>
+      </p>
+
+      <p>
+        <label for="TEXTAREA_ID_2">
+          Label for textarea
+        </label>
+        <textarea
+          id="TEXTAREA_ID_2"
+          disabled="disabled"
+        ></textarea>
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Checkboxes
+      </legend>
+
+      <p>
+        <label for="CHECKBOX_ID_1">
+          <input
+            id="CHECKBOX_ID_1"
+            type="checkbox"
+          />
+          Label for checkbox 1
+        </label>
+      </p>
+
+      <p>
+        <label for="CHECKBOX_ID_2">
+          <input
+            id="CHECKBOX_ID_2"
+            type="checkbox"
+          />
+          Label for checkbox 2
+        </label>
+      </p>
+
+      <p>
+        <label for="CHECKBOX_ID_3">
+          <input
+            id="CHECKBOX_ID_3"
+            type="checkbox"
+            disabled="disabled"
+          />
+          Label for checkbox 2
+        </label>
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Radios
+      </legend>
+
+      <p>
+        <label for="RADIO_ID_1">
+          <input
+            id="RADIO_ID_1"
+            name="RADIO_SET_1"
+            type="radio"
+          />
+          Label for radio 1
+        </label>
+      </p>
+
+      <p>
+        <label for="RADIO_ID_2">
+          <input
+            id="RADIO_ID_2"
+            name="RADIO_SET_1"
+            type="radio"
+          />
+          Label for radio 2
+        </label>
+      </p>
+
+      <p>
+        <label for="RADIO_ID_3">
+          <input
+            id="RADIO_ID_3"
+            name="RADIO_SET_1"
+            type="radio"
+            disabled="disabled"
+          />
+          Label for radio 3
+        </label>
+      </p>
+
+    </fieldset>
+
+    <fieldset>
+
+      <legend>
+        Buttons
+      </legend>
+
+      <p>
+        <button type="button">
+          Button tag
+        </button>
+        <button type="button" disabled="disabled">
+          Button tag
+        </button>
+      </p>
+
+      <p>
+        <input
+          type="button"
+          value="Input: Button"
+        />
+        <input
+          type="button"
+          value="Input: Button"
+          disabled="disabled"
+        />
+      </p>
+
+      <p>
+        <input
+          type="reset"
+          value="Input: Reset"
+        />
+        <input
+          type="reset"
+          value="Input: Reset"
+          disabled="disabled"
+        />
+      </p>
+
+      <p>
+        <input
+          type="submit"
+          value="Input: Submit"
+        />
+        <input
+          type="submit"
+          value="Input: Submit"
+          disabled="disabled"
+        />
+      </p>
+
+    </fieldset>
+
+  </form>
+
+</main>
+
+<footer role="contentinfo">
+
+  <p>
+    <small>
+      &copy; Example Co. Legal stuff here.
+    </small>
+  </p>
+
+</footer>
+
+</body>
+</html>
