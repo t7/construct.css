@@ -62,6 +62,29 @@ blockquote {
 }
 
 /*
+Code blocks.
+==================================================*/
+
+pre {
+  border: 2px dotted #fff;
+
+  border-radius:
+    var(--rough-input-radius-odd);
+
+  margin-top: -2px;
+  margin-left: -2px;
+  margin-right: -2px;
+
+  position: relative;
+  bottom: -2px;
+}
+
+:nth-child(even) > pre {
+  border-radius:
+    var(--rough-input-radius-even);
+}
+
+/*
 Tables.
 ==================================================*/
 
