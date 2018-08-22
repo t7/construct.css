@@ -112,7 +112,9 @@
       <blockquote>
 
         <p>
-          <i>Example blockquote…</i>
+          <i>
+            Example blockquote…
+          </i>
         </p>
 
         <p>
@@ -204,7 +206,11 @@ const myFunction = (o = {}) => {
         <label for="INPUT_ID_2">
           Label for input
         </label>
-        <input id="INPUT_ID_2" type="text" disabled="disabled" />
+        <input
+          id="INPUT_ID_2"
+          type="text"
+          disabled="disabled"
+        />
       </p>
 
     </fieldset>
@@ -251,14 +257,19 @@ const myFunction = (o = {}) => {
         <label for="TEXTAREA_ID_1">
           Label for textarea
         </label>
-        <textarea id="TEXTAREA_ID_1"></textarea>
+        <textarea
+          id="TEXTAREA_ID_1"
+        ></textarea>
       </p>
 
       <p>
         <label for="TEXTAREA_ID_2">
           Label for textarea
         </label>
-        <textarea id="TEXTAREA_ID_2" disabled="disabled"></textarea>
+        <textarea
+          id="TEXTAREA_ID_2"
+          disabled="disabled"
+        ></textarea>
       </p>
 
     </fieldset>
@@ -284,6 +295,17 @@ const myFunction = (o = {}) => {
           <input
             id="CHECKBOX_ID_2"
             type="checkbox"
+          />
+          Label for checkbox 2
+        </label>
+      </p>
+
+      <p>
+        <label for="CHECKBOX_ID_3">
+          <input
+            id="CHECKBOX_ID_3"
+            type="checkbox"
+            disabled="disabled"
           />
           Label for checkbox 2
         </label>
@@ -319,6 +341,18 @@ const myFunction = (o = {}) => {
         </label>
       </p>
 
+      <p>
+        <label for="RADIO_ID_3">
+          <input
+            id="RADIO_ID_3"
+            name="RADIO_SET_1"
+            type="radio"
+            disabled="disabled"
+          />
+          Label for radio 3
+        </label>
+      </p>
+
     </fieldset>
 
     <fieldset>
@@ -328,23 +362,48 @@ const myFunction = (o = {}) => {
       </legend>
 
       <p>
-        <button>Button tag</button>
-        <button disabled="disabled">Button tag</button>
+        <button type="button">
+          Button tag
+        </button>
+        <button type="button" disabled="disabled">
+          Button tag
+        </button>
       </p>
 
       <p>
-        <input type="button" value="Input: Button" />
-        <input type="button" value="Input: Button" disabled="disabled" />
+        <input
+          type="button"
+          value="Input: Button"
+        />
+        <input
+          type="button"
+          value="Input: Button"
+          disabled="disabled"
+        />
       </p>
 
       <p>
-        <input type="reset" value="Input: Reset" />
-        <input type="reset" value="Input: Reset" disabled="disabled" />
+        <input
+          type="reset"
+          value="Input: Reset"
+        />
+        <input
+          type="reset"
+          value="Input: Reset"
+          disabled="disabled"
+        />
       </p>
 
       <p>
-        <input type="submit" value="Input: Submit" />
-        <input type="submit" value="Input: Submit" disabled="disabled" />
+        <input
+          type="submit"
+          value="Input: Submit"
+        />
+        <input
+          type="submit"
+          value="Input: Submit"
+          disabled="disabled"
+        />
       </p>
 
     </fieldset>

@@ -10,6 +10,8 @@ If disallowing `class="…"`.
 Flag "invalid" markup.
 ==================================================*/
 
+button:not([type]),
+input:not([type]),
 img:not([alt]),
 label:not([for]) {
   outline: 2px solid red;

@@ -4,6 +4,7 @@ Set default sans-serif.
 
 * {
   font-family: sans-serif;
+  color: inherit;
 }
 
 /*
@@ -388,13 +389,6 @@ td {
 Form elements.
 ==================================================*/
 
-button,
-input,
-select,
-textarea {
-  color: inherit;
-}
-
 /* Buttons. */
 button,
 input[type="button"],
@@ -417,7 +411,7 @@ input[type="week"],
 select,
 textarea {
   -webkit-appearance: none;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 /*
