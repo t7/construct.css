@@ -11,7 +11,7 @@ header,
 main,
 nav,
 section {
-  border: 1px solid #ccc;
+  border: 1px dashed #ccc;
   position: relative;
 
   padding-top: var(--spacing);
