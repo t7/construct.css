@@ -3,6 +3,7 @@
 ==================================================*/
 
 article,
+aside,
 figure,
 figcaption,
 footer,
@@ -23,6 +24,8 @@ section {
 
 article::before,
 article::after,
+aside::before,
+aside::after,
 figure::before,
 figure::after,
 figcaption::before,
@@ -49,6 +52,7 @@ section::after {
 }
 
 article::before,
+aside::before,
 figure::before,
 figcaption::before,
 footer::before,
@@ -62,6 +66,7 @@ section::before {
 }
 
 article::after,
+aside::after,
 figure::after,
 figcaption::after,
 footer::after,
@@ -82,6 +87,10 @@ BOXES: BEFORE.
 
 article::before {
   content: "article";
+}
+
+aside::before {
+  content: "aside";
 }
 
 figure::before {
@@ -124,6 +133,10 @@ BOXES: AFTER.
 
 article::after {
   content: "/article";
+}
+
+aside::after {
+  content: "/aside";
 }
 
 figure::after {
