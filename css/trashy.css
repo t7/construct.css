@@ -74,7 +74,8 @@ pre,
 table,
 address,
 fieldset,
-figure {
+figure,
+blockquote {
   margin: 0;
   margin-bottom: var(--spacing);
 }
@@ -193,9 +194,10 @@ Blockquote.
 
 blockquote {
   border-left: 5px solid #eee;
-  margin: 0;
+  padding-top: var(--spacing);
   padding-left: var(--spacing);
   position: relative;
+  overflow: hidden;
 }
 
 blockquote::before,
@@ -339,16 +341,22 @@ textarea[disabled] {
   background-color: #eee;
 }
 
-select {
-  background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-
 textarea {
   min-height: 6rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+/*
+  Add a "down" arrow to
+  `<select>` in Webkit.
+*/
+@media (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
 }
 
 /*
