@@ -83,6 +83,9 @@ input[type="url"],
 input[type="week"],
 select,
 textarea {
+  border-color: #999;
+  border-width: 2px;
+
   border-radius:
     var(--rough-input-radius-odd);
 }
