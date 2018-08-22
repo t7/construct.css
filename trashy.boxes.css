@@ -14,11 +14,11 @@ section {
   border: 1px solid #ccc;
   position: relative;
 
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-top: var(--spacing);
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
 
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing);
 }
 
 article::before,
@@ -40,17 +40,13 @@ nav::after,
 section::before,
 section::after {
   color: #f0f;
-  font-family: monospace;
-  font-size: 11px;
+  font-family: "Courier", monospace;
+  font-size: 10px;
   letter-spacing: 1px;
+  line-height: 1;
   text-transform: uppercase;
+  position: absolute;
 }
-
-/*
-==============
-BOXES: BEFORE.
-==============
-*/
 
 article::before,
 figure::before,
@@ -61,11 +57,28 @@ header::before,
 main::before,
 nav::before,
 section::before {
-  padding-left: 3px;
-  position: absolute;
   top: 0;
-  left: 0;
+  left: 3px;
 }
+
+article::after,
+figure::after,
+figcaption::after,
+footer::after,
+form::after,
+header::after,
+main::after,
+nav::after,
+section::after {
+  bottom: 2px;
+  right: 2px;
+}
+
+/*
+==============
+BOXES: BEFORE.
+==============
+*/
 
 article::before {
   content: "article";
@@ -109,21 +122,6 @@ BOXES: AFTER.
 =============
 */
 
-article::after,
-figure::after,
-figcaption::after,
-footer::after,
-form::after,
-header::after,
-main::after,
-nav::after,
-section::after {
-  padding-right: 2px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 article::after {
   content: "/article";
 }
@@ -158,4 +156,12 @@ nav::after {
 
 section::after {
   content: "/section";
+}
+
+/*
+Figure.
+==================================================*/
+
+figure img {
+  margin-bottom: var(--spacing);
 }

@@ -1,10 +1,54 @@
 /*
-Set default sans-serif.
+  NOTE:
+
+  Throughout this file, the `1rem` is equal
+  to `10px`, assuming a browser default of
+  `16px` font size. This is set via the
+  `62.5%` adjustment to the html tag.
+*/
+
+:root {
+  --body-font-size: 1.5rem;
+  --spacing: 2rem;
+}
+
+/*
+Set defaults.
 ==================================================*/
 
 * {
-  font-family: sans-serif;
   color: inherit;
+  font-family: sans-serif;
+  text-rendering: optimizeSpeed
+}
+
+/*
+Body styles.
+==================================================*/
+
+html {
+  /*
+    This takes the default `16px` and
+    changes it to `10px`, so our `rem`
+    measurements are base 10, not 16.
+  */
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  color: #333;
+
+  font-size: var(--body-font-size);
+  line-height: 1.5;
+
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: var(--spacing);
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
 }
 
 /*
@@ -28,7 +72,7 @@ address,
 fieldset,
 figure {
   margin: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing);
 }
 
 /*
@@ -75,29 +119,11 @@ img {
 
 figure img {
   display: block;
-  margin-bottom: 1.5rem;
   width: 100%;
 }
 
-/*
-Body styles.
-==================================================*/
-
-html {
-  background: #fff;
-  color: #333;
-}
-
-body {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-
-  line-height: 1.5;
-
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+figcaption {
+  color: #999;
 }
 
 /*
@@ -113,26 +139,20 @@ hr {
 Header: Nav.
 ==================================================*/
 
-header nav > ul,
-header nav > ul > li {
-  margin: 0;
-  padding: 0;
-}
-
 header nav > ul {
   font-size: 0;
-  margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 header nav ul > li {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 header nav ul > li + li {
   border-left: 1px solid #ccc;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 /*
@@ -140,27 +160,27 @@ Headings.
 ==================================================*/
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 220%;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 200%;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 180%;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 160%;
 }
 
 h5 {
-  font-size: 1.4rem;
+  font-size: 140%;
 }
 
 h6 {
-  font-size: 1.2rem;
+  font-size: 120%;
 }
 
 /*
@@ -170,7 +190,7 @@ Blockquote.
 blockquote {
   border-left: 5px solid #eee;
   margin: 0;
-  padding-left: 1.5rem;
+  padding-left: var(--spacing);
   position: relative;
 }
 
@@ -197,6 +217,10 @@ blockquote::after {
 /*
 Code blocks.
 ==================================================*/
+
+code {
+  font-family: "Courier", monospace;
+}
 
 pre {
   background: #eee;
@@ -287,7 +311,7 @@ select,
 textarea {
   background-color: #fff;
   border: 1px solid #333;
-  height: 2rem;
+  height: 3rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
@@ -318,9 +342,9 @@ select {
 }
 
 textarea {
-  min-height: 4rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  min-height: 6rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 /*
@@ -329,7 +353,7 @@ Radios & Checkboxes.
 
 label input[type="checkbox"],
 label input[type="radio"] {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 /*
@@ -338,9 +362,9 @@ Fieldset.
 
 fieldset {
   border: 1px solid #ccc;
-  padding-top: 1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-top: var(--spacing);
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
   padding-bottom: 0;
 }
 
