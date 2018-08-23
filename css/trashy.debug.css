@@ -19,6 +19,7 @@ Flag "invalid" markup.
 :not(ul):not(ol) > li,
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
+abbr:not([title]),
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr),
 button:not([type]),
 fieldset > :not(legend):first-child,
@@ -51,6 +52,7 @@ ol > :not(li) {
 :not(ul):not(ol) > li,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
+abbr:not([title])::after,
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
@@ -217,11 +219,21 @@ input[type="radio"] + label::after {
 }
 
 /*
+Missing `title` in `abbr`.
+==================================================*/
+
+abbr:not([title])::after {
+  content:
+    '<abbr> needs [title="…"]'
+  ;
+}
+
+/*
 Empty elements.
 ==================================================*/
 
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after {
   content:
-    'Empty element'
+    'Empty element: Consider [aria-hidden="true"]'
   ;
 }
