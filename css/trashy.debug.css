@@ -24,8 +24,7 @@ Flag "invalid" markup.
 a[href][target]:not([rel="noopener"]),
 a[href][target]:not([rel="noreferrer"]),
 button:not([type]),
-figure > figcaption:not(:first-child),
-figure > figcaption:not(:last-child),
+figure > figcaption:not(:first-child):not(:last-child),
 input:not([type]),
 img:not([alt]),
 label:not([for]),
@@ -42,8 +41,7 @@ ol > :not(li) {
 a[href][target]:not([rel="noopener"])::after,
 a[href][target]:not([rel="noreferrer"])::after,
 button:not([type])::after,
-figure > figcaption:not(:first-child)::after,
-figure > figcaption:not(:last-child)::after,
+figure > figcaption:not(:first-child):not(:last-child)::after,
 img:not([alt])::after,
 label:not([for])::after,
 thead th[scope]:not([scope="col"])::after,
@@ -57,15 +55,16 @@ ol > :not(li)::after {
   font-size: 1.1rem;
   font-weight: normal;
   white-space: nowrap;
+  text-decoration: none;
 
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   pointer-events: none;
 
   position: absolute;
   top: 100%;
-  left: -2px;
+  left: 0;
   z-index: 1;
 }
 
@@ -104,8 +103,7 @@ Invalid `figcaption` nesting.
   ;
 }
 
-figure > figcaption:not(:first-child)::after,
-figure > figcaption:not(:last-child)::after {
+figure > figcaption:not(:first-child):not(:last-child)::after {
   content:
     "A <figcaption> must be first/last child of <figure>."
   ;

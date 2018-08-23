@@ -13,7 +13,7 @@ header,
 main,
 nav,
 section {
-  border: 1px dashed #ccc;
+  border: 1px dashed #f0f;
   position: relative;
 
   padding-top: var(--spacing);
@@ -24,38 +24,8 @@ section {
 }
 
 article::before,
-article::after,
 aside::before,
-aside::after,
 div::before,
-div::after,
-figure::before,
-figure::after,
-figcaption::before,
-figcaption::after,
-footer::before,
-footer::after,
-form::before,
-form::after,
-header::before,
-header::after,
-main::before,
-main::after,
-nav::before,
-nav::after,
-section::before,
-section::after {
-  color: #f0f;
-  font-family: "Courier", monospace;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  line-height: 1;
-  text-transform: uppercase;
-  position: absolute;
-}
-
-article::before,
-aside::before,
 figure::before,
 figcaption::before,
 footer::before,
@@ -64,22 +34,15 @@ header::before,
 main::before,
 nav::before,
 section::before {
+  color: #f0f;
+  font-family: "Courier", monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  position: absolute;
   top: 0;
   left: 0.3rem;
-}
-
-article::after,
-aside::after,
-figure::after,
-figcaption::after,
-footer::after,
-form::after,
-header::after,
-main::after,
-nav::after,
-section::after {
-  bottom: 0.2rem;
-  right: 0.2rem;
 }
 
 /*
@@ -130,56 +93,6 @@ nav::before {
 
 section::before {
   content: "section";
-}
-
-/*
-=============
-BOXES: AFTER.
-=============
-*/
-
-article::after {
-  content: "/article";
-}
-
-aside::after {
-  content: "/aside";
-}
-
-div::after {
-  content: "/div";
-}
-
-figure::after {
-  content: "/figure";
-}
-
-figcaption::after {
-  content: "/figcaption";
-}
-
-footer::after {
-  content: "/footer";
-}
-
-form::after {
-  content: "/form";
-}
-
-header::after {
-  content: "/header";
-}
-
-main::after {
-  content: "/main";
-}
-
-nav::after {
-  content: "/nav";
-}
-
-section::after {
-  content: "/section";
 }
 
 /*
