@@ -3,16 +3,10 @@ Variables.
 ==================================================*/
 
 :root {
-  --flag-invalid: 2px solid red;
-}
+  --flag-invalid-color: #f00;
 
-/*
-If disallowing `class="…"`.
-==================================================*/
-
-[class] {
-  outline:
-    var(--flag-invalid);
+  --flag-invalid-outline:
+    2px solid var(--flag-invalid-color);
 }
 
 /*
@@ -25,6 +19,7 @@ Flag "invalid" markup.
 :not(ul):not(ol) > li,
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr),
 button:not([type]),
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
@@ -32,15 +27,21 @@ figure > figcaption:not(:first-child):not(:last-child),
 input:not([type]),
 input[type="checkbox"] + label,
 input[type="radio"] + label,
+input[type="radio"]:not([name]),
+input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+select:not([id]):not([aria-label]):not([aria-labelledby])
 img:not([alt]),
-input:not([id]),
+img:not([src]),
 input:not([type]),
 label:not([for]),
 thead th[scope]:not([scope="col"]),
 tbody th[scope]:not([scope="row"]),
 ul > :not(li),
 ol > :not(li) {
-  outline: 2px solid #f00;
+  outline:
+    var(--flag-invalid-outline);
+
   position: relative;
 }
 
@@ -50,19 +51,24 @@ ol > :not(li) {
 :not(ul):not(ol) > li,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
 img:not([alt])::after,
-input:not([id])::after,
+img:not([src])::after,
 input:not([type])::after,
+input[type="checkbox"] + label::after,
+input[type="radio"] + label::after,
 label:not([for])::after,
 thead th[scope]:not([scope="col"])::after,
 tbody th[scope]:not([scope="row"])::after,
 ul > :not(li)::after,
 ol > :not(li)::after {
-  background: #f00;
+  background:
+    var(--flag-invalid-color);
+
   color: #fff;
 
   font-family: Verdana, sans-serif;
@@ -88,7 +94,7 @@ Inline `style`.
 
 [style]::after {
   content:
-    'Inline style="…" detected'
+    'Inline [style="…"] detected'
   ;
 }
 
@@ -99,7 +105,7 @@ Risky links.
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after {
   content:
-    'target="…" also needs rel="noopener noreferrer"'
+    '[target="…"] also needs [rel="noopener noreferrer"]'
   ;
 }
 
@@ -109,13 +115,13 @@ Table: Incorrect `scope` values.
 
 thead th[scope]:not([scope="col"])::after {
   content:
-    'Expected: scope="col". Actual: scope="' attr(scope) '"'
+    'Expected: [scope="col"]. Actual: [scope="' attr(scope) '"]'
   ;
 }
 
 tbody th[scope]:not([scope="row"])::after {
   content:
-    'Expected: scope="row". Actual: scope="' attr(scope) '"'
+    'Expected: [scope="row"]. Actual: [scope="' attr(scope) '"]'
   ;
 }
 
@@ -143,7 +149,7 @@ Invalid `li` nesting.
 ul > :not(li)::after,
 ol > :not(li)::after {
   content:
-    "The only valid child of <ol> and <ul> is <li>"
+    "<li> must be immediate child of <ul> or <ol>"
   ;
 }
 
@@ -170,7 +176,7 @@ Missing `for` on `label`.
 
 label:not([for])::after {
   content:
-    '<label> needs for="…" to match <input> id="…"'
+    '<label> needs [for="…"] to match <input> [id="…"]'
   ;
 }
 
@@ -180,6 +186,42 @@ Missing `type` on `button`.
 
 button:not([type])::after {
   content:
-    '<button> lacks type="…" attribute'
+    '<button> needs [type="…"]'
+  ;
+}
+
+/*
+Missing `src` on `image`.
+==================================================*/
+
+img:not([src])::after {
+  content:
+    '<img> needs [src="…"]'
+  ;
+}
+
+/*
+Adjacent "checkbox" and "radio" labels.
+==================================================*/
+
+input[type="checkbox"] + label::after {
+  content:
+    '<input type="checkbox"> should be nested inside <label>'
+  ;
+}
+
+input[type="radio"] + label::after {
+  content:
+    '<input type="radio"> should be nested inside <label>'
+  ;
+}
+
+/*
+Empty elements.
+==================================================*/
+
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after {
+  content:
+    'Empty element'
   ;
 }

@@ -362,10 +362,9 @@ textarea {
 Radios & Checkboxes.
 ==================================================*/
 
-label input[type="checkbox"],
-label input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   margin-right: 0.5rem;
-  vertical-align: middle;
 }
 
 /*
