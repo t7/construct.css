@@ -17,6 +17,7 @@ Flag "invalid" markup.
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
+a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
 abbr:not([title]),
@@ -52,6 +53,7 @@ ol > :not(li) {
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li,
+a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
 abbr:not([title])::after,
@@ -107,6 +109,12 @@ Inline `style`.
 /*
 Risky links.
 ==================================================*/
+
+a[href^="http:"]::after {
+  content:
+    'Link to "http:" site. Does "https:" equivalent exist?'
+  ;
+}
 
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after {
