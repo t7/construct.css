@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<h1 id="TEST">
+<h1 style="background: none">
   Invalid HTML Examples
 </h1>
 
@@ -79,6 +79,39 @@
     Invalid item within list.
   </p>
 </ol>
+
+<hr />
+
+<form onsubmit="return false">
+
+  <fieldset>
+
+    <p>
+      This paragraph is <code>:first-child</code>.
+    </p>
+
+    <legend>
+      This legend is not <code>:first-child</code>.
+    </legend>
+
+    <br />
+
+    <p>
+      <label>
+        This label lacks <code>for="…"</code>
+      </label>
+      <input type="text" />
+    </p>
+
+    <p>
+      <button>
+        Button lacks <code>type="…"</code>
+      </button>
+    </p>
+
+  </fieldset>
+
+</form>
 
 <hr />
 

@@ -19,14 +19,22 @@ If disallowing `class="…"`.
 Flag "invalid" markup.
 ==================================================*/
 
+[style],
+:not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
-a[href][target]:not([rel="noopener"]),
-a[href][target]:not([rel="noreferrer"]),
+a[target]:not([rel*="noopener"]),
+a[target]:not([rel*="noreferrer"]),
 button:not([type]),
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child),
 figure > figcaption:not(:first-child):not(:last-child),
 input:not([type]),
+input[type="checkbox"] + label,
+input[type="radio"] + label,
 img:not([alt]),
+input:not([id]),
+input:not([type]),
 label:not([for]),
 thead th[scope]:not([scope="col"]),
 tbody th[scope]:not([scope="row"]),
@@ -36,13 +44,19 @@ ol > :not(li) {
   position: relative;
 }
 
-:not(ul):not(ol) > li,
+[style]::after,
+:not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
-a[href][target]:not([rel="noopener"])::after,
-a[href][target]:not([rel="noreferrer"])::after,
+:not(ul):not(ol) > li,
+a[target]:not([rel*="noopener"])::after,
+a[target]:not([rel*="noreferrer"])::after,
 button:not([type])::after,
+fieldset > :not(legend):first-child::after,
+fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
 img:not([alt])::after,
+input:not([id])::after,
+input:not([type])::after,
 label:not([for])::after,
 thead th[scope]:not([scope="col"])::after,
 tbody th[scope]:not([scope="row"])::after,
@@ -69,27 +83,39 @@ ol > :not(li)::after {
 }
 
 /*
-Risky links.
+Inline `style`.
 ==================================================*/
 
-a[href][target]:not([rel="noopener"])::after,
-a[href][target]:not([rel="noreferrer"])::after {
-  content: 'Has target, missing rel="noopener noreferrer"';
+[style]::after {
+  content:
+    'Inline style="…" detected'
+  ;
 }
 
 /*
-Incorrect `scope` values.
+Risky links.
+==================================================*/
+
+a[target]:not([rel*="noopener"])::after,
+a[target]:not([rel*="noreferrer"])::after {
+  content:
+    'target="…" also needs rel="noopener noreferrer"'
+  ;
+}
+
+/*
+Table: Incorrect `scope` values.
 ==================================================*/
 
 thead th[scope]:not([scope="col"])::after {
   content:
-    'Should be: scope="col". You have: scope="' attr(scope) '"'
+    'Expected: scope="col". Actual: scope="' attr(scope) '"'
   ;
 }
 
 tbody th[scope]:not([scope="row"])::after {
   content:
-    'Should be: scope="row". You have: scope="' attr(scope) '"'
+    'Expected: scope="row". Actual: scope="' attr(scope) '"'
   ;
 }
 
@@ -99,13 +125,13 @@ Invalid `figcaption` nesting.
 
 :not(figure) > figcaption::after {
   content:
-    "A <figcaption> must be a child of <figure>."
+    "<figcaption> must be a child of <figure>"
   ;
 }
 
 figure > figcaption:not(:first-child):not(:last-child)::after {
   content:
-    "A <figcaption> must be first/last child of <figure>."
+    "<figcaption> must be first/last child of <figure>"
   ;
 }
 
@@ -117,6 +143,43 @@ Invalid `li` nesting.
 ul > :not(li)::after,
 ol > :not(li)::after {
   content:
-    "The only valid child of <ol> and <ul> is <li>."
+    "The only valid child of <ol> and <ul> is <li>"
+  ;
+}
+
+/*
+Invalid `legend` position in `fieldset`.
+==================================================*/
+
+fieldset > :not(legend):first-child::after {
+  content:
+    "Invalid :first-child of <legend>"
+  ;
+}
+
+:not(fieldset) > legend::after,
+fieldset > legend:not(:first-child)::after {
+  content:
+    "<legend> must be :first-child of <fieldset>"
+  ;
+}
+
+/*
+Missing `for` on `label`.
+==================================================*/
+
+label:not([for])::after {
+  content:
+    '<label> needs for="…" to match <input> id="…"'
+  ;
+}
+
+/*
+Missing `type` on `button`.
+==================================================*/
+
+button:not([type])::after {
+  content:
+    '<button> lacks type="…" attribute'
   ;
 }
