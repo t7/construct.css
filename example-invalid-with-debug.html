@@ -44,7 +44,28 @@
 <hr />
 
 <p>
-  More than one <code>figcaption</code> per <code>figure</code>.
+  The <code>figcaption</code> not first/last child of <code>figure</code>.
+</p>
+
+<figure>
+  <img
+    alt="Example image"
+    src="https://picsum.photos/900/100"
+  />
+  <figcaption>
+    <p>
+      Image description
+    </p>
+  </figcaption>
+  <p>
+    (This paragraph is <code>:last-child</code>.)
+  </p>
+</figure>
+
+<hr />
+
+<p>
+  More than one <code>figcaption</code> per <code>figure</code>. Image with missing <code>src</code>.
 </p>
 
 <figure>
@@ -62,30 +83,6 @@
       Image description
     </p>
   </figcaption>
-</figure>
-
-<hr />
-
-<p>
-  Caption not first/last child. Image with missing <code>src</code>.
-</p>
-
-<figure>
-  <p>
-    (This paragraph is <code>:first-child</code>.)
-  </p>
-  <figcaption>
-    <p>
-      Image description
-    </p>
-  </figcaption>
-  <img
-    alt="Example image"
-    src="https://picsum.photos/900/100"
-  />
-  <p>
-    (This paragraph is <code>:last-child</code>.)
-  </p>
 </figure>
 
 <hr />
