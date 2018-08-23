@@ -52,15 +52,15 @@
       Image description
     </p>
   </figcaption>
+  <img
+    alt="(Image source omitted)"
+    height="100"
+  />
   <figcaption>
     <p>
       Image description
     </p>
   </figcaption>
-  <img
-    alt="Example image"
-    src="https://picsum.photos/900/100"
-  />
 </figure>
 
 <hr />
@@ -71,7 +71,7 @@
 
 <figure>
   <p>
-    (This paragraph is the <code>:first-child</code>.)
+    (This paragraph is <code>:first-child</code>.)
   </p>
   <figcaption>
     <p>
@@ -79,9 +79,12 @@
     </p>
   </figcaption>
   <img
-    alt="(Image source omitted)"
-    height="100"
+    alt="Example image"
+    src="https://picsum.photos/900/100"
   />
+  <p>
+    (This paragraph is <code>:last-child</code>.)
+  </p>
 </figure>
 
 <hr />
@@ -217,7 +220,7 @@
 <hr />
 
 <p>
-  Table with invalid <code>col</code> value.
+  Table with invalid <code>col</code> values.
 </p>
 
 <table>

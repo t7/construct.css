@@ -25,6 +25,7 @@ button:not([type]),
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 figure > figcaption:not(:first-child):not(:last-child),
+figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption),
 figure > figcaption:not(:first-of-type),
 input:not([type]),
 input[type="checkbox"] + label,
@@ -59,6 +60,7 @@ button:not([type])::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
+figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
 figure > figcaption:not(:first-of-type)::after,
 img:not([alt])::after,
 img:not([src])::after,
@@ -139,7 +141,8 @@ Invalid `figcaption` nesting.
   ;
 }
 
-figure > figcaption:not(:first-child):not(:last-child)::after {
+figure > figcaption:not(:first-child):not(:last-child)::after,
+figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after {
   content:
     "<figcaption> must be first/last child of <figure>"
   ;
