@@ -162,31 +162,34 @@ textarea {
 Radios & Checkboxes.
 ==================================================*/
 
-label input[type="checkbox"],
-label input[type="radio"] {
-  -webkit-appearance: none;
+/* Only works in Webkit. */
+@media (-webkit-min-device-pixel-ratio: 0) {
+  label input[type="checkbox"],
+  label input[type="radio"] {
+    -webkit-appearance: none;
 
-  border: 2px solid #333;
+    border: 2px solid #333;
 
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 
-  transform: rotate(3deg);
-}
+    transform: rotate(3deg);
+  }
 
-:nth-child(even) > label input[type="checkbox"],
-:nth-child(even) > label input[type="radio"] {
-  transform: rotate(-3deg);
-}
+  :nth-child(even) > label input[type="checkbox"],
+  :nth-child(even) > label input[type="radio"] {
+    transform: rotate(-3deg);
+  }
 
-label input[type="radio"] {
-  border-radius: 8px 9px 8px 9px;
-}
+  label input[type="radio"] {
+    border-radius: 8px 9px 8px 9px;
+  }
 
-label input[type="checkbox"]:checked,
-label input[type="radio"]:checked {
-  background: #f0f;
-  box-shadow: inset 0 0 0 3px #fff;
+  label input[type="checkbox"]:checked,
+  label input[type="radio"]:checked {
+    background: #f0f;
+    box-shadow: inset 0 0 0 3px #fff;
+  }
 }
 
 /*

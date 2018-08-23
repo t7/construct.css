@@ -4,6 +4,7 @@
 
 article,
 aside,
+div,
 figure,
 figcaption,
 footer,
@@ -26,6 +27,8 @@ article::before,
 article::after,
 aside::before,
 aside::after,
+div::before,
+div::after,
 figure::before,
 figure::after,
 figcaption::before,
@@ -44,8 +47,8 @@ section::before,
 section::after {
   color: #f0f;
   font-family: "Courier", monospace;
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
   line-height: 1;
   text-transform: uppercase;
   position: absolute;
@@ -62,7 +65,7 @@ main::before,
 nav::before,
 section::before {
   top: 0;
-  left: 3px;
+  left: 0.3rem;
 }
 
 article::after,
@@ -75,8 +78,8 @@ header::after,
 main::after,
 nav::after,
 section::after {
-  bottom: 2px;
-  right: 2px;
+  bottom: 0.2rem;
+  right: 0.2rem;
 }
 
 /*
@@ -91,6 +94,10 @@ article::before {
 
 aside::before {
   content: "aside";
+}
+
+div::before {
+  content: "div";
 }
 
 figure::before {
@@ -137,6 +144,10 @@ article::after {
 
 aside::after {
   content: "/aside";
+}
+
+div::after {
+  content: "/div";
 }
 
 figure::after {

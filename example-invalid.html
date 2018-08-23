@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<title>Trashy.css - The throwaway CSS library with no class</title>
+<!-- FONTS. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pangolin" />
+<!-- STYLES. -->
+<link rel="stylesheet" href="./css/sanitize.css" />
+<link rel="stylesheet" href="./css/trashy.css" />
+<link rel="stylesheet" href="./css/trashy.debug.css" />
+</head>
+<body>
+
+<h1 id="TEST">
+  Invalid HTML Examples
+</h1>
+
+<hr />
+
+<p>
+  Caption not first/last child. Image with missing <code>alt</code> text.
+</p>
+
+<figure>
+  <img
+    src="https://picsum.photos/900/500"
+  />
+  <figcaption>
+    <p>
+      Image description
+    </p>
+  </figcaption>
+  <p>
+    (This paragraph is the <code>:last-child</code>.)
+  </p>
+</figure>
+
+<hr />
+
+<p>
+  Caption is not a child of figure.
+</p>
+
+<figcaption>
+  <p>
+    This <code>figcaption</code> lacks a <code>figure</code> parent.
+  <p>
+</figcaption>
+
+<hr />
+
+<p>
+  Link with <code>target="_blank"</code> that lacks <code>rel="noopener noreferrer"</code>.
+</p>
+
+<p>
+  <a href="https://example.com/" target="_blank">
+    Example link
+  </a>
+</p>
+
+<hr />
+
+<p>
+  Invalid child of <code>ul</code> or <code>ol</code>.
+</p>
+
+<ol>
+  <li>
+    <p>
+      Valid item within list.
+    </p>
+  </li>
+  <p>
+    Invalid item within list.
+  </p>
+</ol>
+
+<hr />
+
+<p>
+  Table with invalid <code>col</code> value.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        &nbsp;
+      </th>
+      <th scope="INVALID">
+        Uno
+      </th>
+      <th scope="col">
+        Dos
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        Foo:
+      </th>
+      <td>
+        Value 1
+      </td>
+      <td>
+        Value 2
+      </td>
+    </tr>
+    <tr>
+      <th scope="INVALID">
+        Foo:
+      </th>
+      <td>
+        Value 1
+      </td>
+      <td>
+        Value 2
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

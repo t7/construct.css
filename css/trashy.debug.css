@@ -1,18 +1,124 @@
 /*
+Variables.
+==================================================*/
+
+:root {
+  --flag-invalid: 2px solid red;
+}
+
+/*
 If disallowing `class="…"`.
 ==================================================*/
 
 [class] {
-  outline: 2px solid red;
+  outline:
+    var(--flag-invalid);
 }
 
 /*
 Flag "invalid" markup.
 ==================================================*/
 
+:not(figure) > figcaption,
+:not(ul):not(ol) > li,
+a[href][target]:not([rel="noopener"]),
+a[href][target]:not([rel="noreferrer"]),
 button:not([type]),
+figure > figcaption:not(:first-child),
+figure > figcaption:not(:last-child),
 input:not([type]),
 img:not([alt]),
-label:not([for]) {
-  outline: 2px solid red;
+label:not([for]),
+thead th[scope]:not([scope="col"]),
+tbody th[scope]:not([scope="row"]),
+ul > :not(li),
+ol > :not(li) {
+  outline: 2px solid #f00;
+  position: relative;
+}
+
+:not(ul):not(ol) > li,
+:not(figure) > figcaption::after,
+a[href][target]:not([rel="noopener"])::after,
+a[href][target]:not([rel="noreferrer"])::after,
+button:not([type])::after,
+figure > figcaption:not(:first-child)::after,
+figure > figcaption:not(:last-child)::after,
+img:not([alt])::after,
+label:not([for])::after,
+thead th[scope]:not([scope="col"])::after,
+tbody th[scope]:not([scope="row"])::after,
+ul > :not(li)::after,
+ol > :not(li)::after {
+  background: #f00;
+  color: #fff;
+
+  font-family: Verdana, sans-serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  white-space: nowrap;
+
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+
+  pointer-events: none;
+
+  position: absolute;
+  top: 100%;
+  left: -2px;
+  z-index: 1;
+}
+
+/*
+Risky links.
+==================================================*/
+
+a[href][target]:not([rel="noopener"])::after,
+a[href][target]:not([rel="noreferrer"])::after {
+  content: 'Has target, missing rel="noopener noreferrer"';
+}
+
+/*
+Incorrect `scope` values.
+==================================================*/
+
+thead th[scope]:not([scope="col"])::after {
+  content:
+    'Should be: scope="col". You have: scope="' attr(scope) '"'
+  ;
+}
+
+tbody th[scope]:not([scope="row"])::after {
+  content:
+    'Should be: scope="row". You have: scope="' attr(scope) '"'
+  ;
+}
+
+/*
+Invalid `figcaption` nesting.
+==================================================*/
+
+:not(figure) > figcaption::after {
+  content:
+    "A <figcaption> must be a child of <figure>."
+  ;
+}
+
+figure > figcaption:not(:first-child)::after,
+figure > figcaption:not(:last-child)::after {
+  content:
+    "A <figcaption> must be first/last child of <figure>."
+  ;
+}
+
+/*
+Invalid `li` nesting.
+==================================================*/
+
+:not(ul):not(ol) > li,
+ul > :not(li)::after,
+ol > :not(li)::after {
+  content:
+    "The only valid child of <ol> and <ul> is <li>."
+  ;
 }
