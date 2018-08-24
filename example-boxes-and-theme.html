@@ -144,8 +144,8 @@
 const myFunction = (o = {}) => {
   // Peel apart.
   const {
-    foo,
-    bar
+    foo = 0,
+    bar = 0
   } = o
 
   // Log values.
