@@ -35,7 +35,7 @@ script:empty[src]:not([async]) {
 }
 
 /*
-Flag "invalid" markup.
+Outline "invalid" markup.
 ==================================================*/
 
 [style],
@@ -74,6 +74,10 @@ ol > :not(li) {
 
   position: relative;
 }
+
+/*
+Visual style for warning indicators.
+==================================================*/
 
 [style]::after,
 :not(fieldset) > legend::after,
