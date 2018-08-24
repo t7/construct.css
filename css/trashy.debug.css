@@ -46,7 +46,7 @@ a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
 abbr:not([title]),
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr),
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr),
 button:not([type]),
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
@@ -83,7 +83,7 @@ a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
 abbr:not([title])::after,
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after,
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr)::after,
 body style::after,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
@@ -347,6 +347,10 @@ script:empty[src]:not([async])::after {
   content:
     '<script> with [src="…"] needs `async` attribute'
   ;
+}
+
+body script:empty[src]:not([async])::after {
+  top: 0;
 }
 
 /*
