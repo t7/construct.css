@@ -7,6 +7,9 @@ Variables.
 
   --flag-invalid-outline:
     2px solid var(--flag-invalid-color);
+
+  --spacing-double:
+    calc(2 * var(--spacing));
 }
 
 /*
@@ -31,7 +34,9 @@ script:empty[src]:not([async]) {
   position: relative;
 
   width: 100%;
-  height: 4rem;
+
+  height:
+    var(--spacing-double);
 }
 
 /*
@@ -301,7 +306,8 @@ Flag missing `<html lang="…">` attribute.
 */
 
 html:not([lang]) body {
-  padding-top: calc(2 * var(--spacing));
+  padding-top:
+    var(--spacing-double);
 }
 
 html:not([lang]) body::after {
