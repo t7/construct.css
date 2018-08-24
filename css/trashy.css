@@ -247,8 +247,8 @@ td {
   vertical-align: top;
 }
 
-:not(thead) > tr > th,
-:not(thead) > tr > td {
+:not(thead):not(tbody:first-child) > tr > th,
+:not(thead):not(tbody:first-child) > tr > td {
   border-top: 1px solid #ccc;
 }
 

@@ -39,6 +39,7 @@ img:not([alt]),
 img:not([src]),
 input:not([type]),
 label:not([for]),
+table[role="presentation"],
 thead th[scope]:not([scope="col"]),
 tbody th[scope]:not([scope="row"]),
 ul > :not(li),
@@ -71,6 +72,7 @@ input:not([type])::after,
 input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label:not([for])::after,
+table[role="presentation"]::after,
 thead th[scope]:not([scope="col"])::after,
 tbody th[scope]:not([scope="row"])::after,
 ul > :not(li)::after,
@@ -272,5 +274,16 @@ html:not([lang]) body::after {
 
   content:
     'Missing [lang="…"] on <html>'
+  ;
+}
+
+/*
+Flag `<table role="presentation">`.
+=================================================
+*/
+
+table[role="presentation"]::after {
+  content:
+    '<table> has [role="presentation"] - Use Flexbox instead?'
   ;
 }
