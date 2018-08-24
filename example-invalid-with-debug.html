@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <title>Trashy.css - The throwaway CSS library with no class</title>
@@ -12,8 +11,33 @@
 <link rel="stylesheet" href="./css/trashy.css" />
 <link rel="stylesheet" href="./css/trashy.boxes.css" />
 <link rel="stylesheet" href="./css/trashy.debug.css" />
+
+<!-- One `style` tag is okay. -->
+<style>
+div {
+  display: block;
+}
+</style>
+
+<!-- More `style` tags get flagged. -->
+<style>
+div {
+  display: block;
+}
+</style>
+
+<!-- `script` with `src` needs `async` -->
+<script src=""></script>
+
 </head>
 <body>
+
+<!-- `style` not allowed within `body` -->
+<style>
+div {
+  display: block;
+}
+</style>
 
 <h1 style="background: none">
   Invalid HTML Examples

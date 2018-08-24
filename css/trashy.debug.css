@@ -10,6 +10,31 @@ Variables.
 }
 
 /*
+Warnings for `head` and `style`.
+=================================================*/
+
+head {
+  display: block;
+}
+
+body style,
+head > :first-child:not([charset="utf-8"]),
+head > style:not(:first-of-type),
+script:empty[src]:not([async]) {
+  display: block;
+
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -99999px;
+
+  position: relative;
+
+  width: 100%;
+  height: 4rem;
+}
+
+/*
 Flag "invalid" markup.
 ==================================================*/
 
@@ -59,12 +84,15 @@ a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
 abbr:not([title])::after,
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after,
+body style::after,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
 figure > figcaption:not(:first-of-type)::after,
+head > :first-child:not([charset="utf-8"])::after,
+head > style:not(:first-of-type)::after,
 html:not([lang]) body::after,
 img:not([alt])::after,
 img:not([src])::after,
@@ -72,6 +100,7 @@ input:not([type])::after,
 input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label:not([for])::after,
+script:empty[src]:not([async])::after,
 table[role="presentation"]::after,
 thead th[scope]:not([scope="col"])::after,
 tbody th[scope]:not([scope="row"])::after,
@@ -85,8 +114,10 @@ ol > :not(li)::after {
   font-family: Verdana, sans-serif;
   font-size: 1.1rem;
   font-weight: normal;
-  white-space: nowrap;
+  line-height: 1.5;
   text-decoration: none;
+  text-indent: 0;
+  white-space: nowrap;
 
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -285,5 +316,47 @@ Flag `<table role="presentation">`.
 table[role="presentation"]::after {
   content:
     '<table> has [role="presentation"] - Use Flexbox instead?'
+  ;
+}
+
+/*
+Missing `meta[charset]` tag.
+=================================================*/
+
+head > :first-child:not([charset="utf-8"])::after {
+  content:
+    '<head> needs <meta charset="utf-8"> as :first-child'
+  ;
+}
+
+/*
+Redundant `style` tags.
+=================================================*/
+
+head > style:not(:first-of-type)::after {
+  content:
+    "Use a single <style> tag for crucial CSS"
+  ;
+}
+
+/*
+Non-async `script` tags.
+=================================================*/
+
+script:empty[src]:not([async])::after {
+  content:
+    '<script> with [src="…"] needs `async` attribute'
+  ;
+}
+
+/*
+`style` not allowed within `body`.
+=================================================*/
+
+body style::after {
+  top: 0;
+
+  content:
+    "<style> tag is not allowed within <body>"
   ;
 }
