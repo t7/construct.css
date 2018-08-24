@@ -64,6 +64,7 @@ fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
 figure > figcaption:not(:first-of-type)::after,
+html:not([lang]) body::after,
 img:not([alt])::after,
 img:not([src])::after,
 input:not([type])::after,
@@ -254,5 +255,22 @@ Empty elements.
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after {
   content:
     'Empty element: Consider [aria-hidden="true"]'
+  ;
+}
+
+/*
+Flag missing `<html lang="…">` attribute.
+=================================================
+*/
+
+html:not([lang]) body {
+  padding-top: calc(2 * var(--spacing));
+}
+
+html:not([lang]) body::after {
+  top: 0;
+
+  content:
+    'Missing [lang="…"] on <html>'
   ;
 }
