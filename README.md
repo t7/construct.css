@@ -8,7 +8,7 @@ https://t7.github.io/trashy.css/
 
 ---
 
-Prior art…
+## Prior art
 
 Trashy.css was inspired by these fine projects:
 
