@@ -116,15 +116,15 @@ ol > :not(li)::after {
   color: #fff;
 
   font-family: Verdana, sans-serif;
-  font-size: 1.1rem;
+  font-size: 11px;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: none;
   text-indent: 0;
   white-space: nowrap;
 
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
 
   pointer-events: none;
 
