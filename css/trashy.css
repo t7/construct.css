@@ -247,9 +247,14 @@ td {
   vertical-align: top;
 }
 
-:not(thead):not(tbody:first-child) > tr > th,
-:not(thead):not(tbody:first-child) > tr > td {
+:not(thead) > tr > th,
+:not(thead) > tr > td {
   border-top: 1px solid #ccc;
+}
+
+tbody:first-child > tr > th,
+tbody:first-child > tr > td {
+  border-top: 0;
 }
 
 /*
