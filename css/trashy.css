@@ -147,12 +147,12 @@ header nav > ul {
   padding: 0;
 }
 
-header nav ul > li {
+header nav > ul > li {
   display: inline-block;
   font-size: 1.6rem;
 }
 
-header nav ul > li + li {
+header nav > ul > li + li {
   border-left: 1px solid #ccc;
   margin-left: 1rem;
   padding-left: 1rem;
