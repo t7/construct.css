@@ -211,9 +211,21 @@
 
     <p>
       <label>
-        This label lacks <code>for="…"</code>
+        This <code>label</code> lacks <code>for="…"</code>
       </label>
-      <input type="text" />
+      <input
+        id="INPUT_TEXT_ID_1"
+        type="text"
+      />
+    </p>
+
+    <p>
+      <label for="INPUT_TEXT_ID_2">
+        This <code>input</code> lacks <code>id="…"</code>
+      </label>
+      <input
+        type="text"
+      />
     </p>
 
   </fieldset>
