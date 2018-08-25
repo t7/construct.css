@@ -28,6 +28,7 @@ head {
   padding-right: var(--spacing);
 }
 
+body link,
 body style,
 head > :first-child:not([charset="utf-8"]),
 head > style:not(:first-of-type),
@@ -65,7 +66,7 @@ a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
 abbr:not([title]),
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr),
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr),
 button:not([type]),
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
@@ -104,7 +105,8 @@ a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
 abbr:not([title])::after,
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr)::after,
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr)::after,
+body link::after,
 body style::after,
 body[style]::before,
 button:not([type])::after,
@@ -317,7 +319,7 @@ abbr:not([title])::after {
 Empty elements.
 ==================================================*/
 
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after {
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(param):not(source):not(textarea):not(track):not(wbr)::after {
   content:
     'Empty element: Consider [aria-hidden="true"]'
   ;
@@ -408,5 +410,17 @@ body style::after {
 
   content:
     "<style> tag is not allowed within <body>"
+  ;
+}
+
+/*
+`link` not allowed within `body`.
+=================================================*/
+
+body link::after {
+  top: 0;
+
+  content:
+    "<link> tag is not allowed within <body>"
   ;
 }
