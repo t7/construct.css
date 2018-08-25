@@ -32,8 +32,8 @@ body style,
 head > :first-child:not([charset="utf-8"]),
 html > script,
 head > style:not(:first-of-type),
-script[src]:empty:not([async]),
-script:not([src]):not(:empty),
+script:empty[src]:not([async]),
+script:not(:empty):not([src]),
 title:empty {
   display: block;
 
@@ -143,8 +143,8 @@ input:not([type])::after,
 input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label:not([for])::after,
-script[src]:empty:not([async])::after,
-script:not([src]):not(:empty)::after,
+script:empty[src]:not([async])::after,
+script:not(:empty):not([src])::after,
 table[role="presentation"]::after,
 thead th[scope]:not([scope="col"])::after,
 title:empty::after,
@@ -404,18 +404,18 @@ title:empty::after {
 =================================================*/
 
 html > script::after,
-:not(head):not(html) script:not(:empty):not([src])::after,
-:not(head):not(html) script[src]:empty:not([async])::after {
+body script:not(:empty):not([src])::after,
+body script:empty[src]:not([async])::after {
   top: 0;
 }
 
-script[src]:empty:not([async])::after {
+script:empty[src]:not([async])::after {
   content:
     'Consider [async] for <script> with [src="…"]'
   ;
 }
 
-script:not([src]):not(:empty)::after {
+script:not(:empty):not([src])::after {
   content:
     'Move inline <script> to external *.js file'
   ;
