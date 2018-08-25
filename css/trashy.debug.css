@@ -18,12 +18,21 @@ Warnings for `head` and `style`.
 
 head {
   display: block;
+
+  max-width: var(--max-page-width);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
 }
 
 body style,
 head > :first-child:not([charset="utf-8"]),
 head > style:not(:first-of-type),
-script:empty[src]:not([async]) {
+script:empty[src]:not([async]),
+title:empty {
   display: block;
 
   color: transparent;
@@ -34,16 +43,15 @@ script:empty[src]:not([async]) {
   position: relative;
 
   width: 100%;
-
-  height:
-    var(--spacing-double);
+  height: var(--spacing);
+  margin-bottom: var(--spacing);
 }
 
 /*
 Outline "invalid" markup.
 ==================================================*/
 
-[style],
+[style]:not(body):not(html),
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
@@ -74,9 +82,7 @@ thead th[scope]:not([scope="col"]),
 tbody th[scope]:not([scope="row"]),
 ul > :not(li),
 ol > :not(li) {
-  outline:
-    var(--flag-invalid-outline);
-
+  outline: var(--flag-invalid-outline);
   position: relative;
 }
 
@@ -84,7 +90,7 @@ ol > :not(li) {
 Visual style for warning indicators.
 ==================================================*/
 
-[style]::after,
+[style]:not(body):not(html)::after,
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li,
@@ -94,6 +100,7 @@ a[target]:not([rel*="noreferrer"])::after,
 abbr:not([title])::after,
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(object):not(param):not(script):not(source):not(textarea):not(track):not(wbr)::after,
 body style::after,
+body[style]::before,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
@@ -102,7 +109,7 @@ figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcapt
 figure > figcaption:not(:first-of-type)::after,
 head > :first-child:not([charset="utf-8"])::after,
 head > style:not(:first-of-type)::after,
-html:not([lang]) body::after,
+html:not([lang]) head::before,
 img:not([alt])::after,
 img:not([src])::after,
 input:not([type])::after,
@@ -112,13 +119,13 @@ label:not([for])::after,
 script:empty[src]:not([async])::after,
 table[role="presentation"]::after,
 thead th[scope]:not([scope="col"])::after,
+title:empty::after,
 tbody th[scope]:not([scope="row"])::after,
 ul > :not(li)::after,
 ol > :not(li)::after {
-  background:
-    var(--flag-invalid-color);
-
+  background: var(--flag-invalid-color);
   color: #fff;
+  display: inline-block;
 
   font-family: Verdana, sans-serif;
   font-size: 11px;
@@ -143,9 +150,18 @@ ol > :not(li)::after {
 Inline `style`.
 ==================================================*/
 
-[style]::after {
+[style]:not(body):not(html)::after {
   content:
     'Inline [style="…"] detected'
+  ;
+}
+
+body[style]::before {
+  position: static;
+  margin-bottom: var(--spacing);
+
+  content:
+    '<body> has inline [style="…"]'
   ;
 }
 
@@ -305,13 +321,9 @@ Flag missing `<html lang="…">` attribute.
 =================================================
 */
 
-html:not([lang]) body {
-  padding-top:
-    var(--spacing-double);
-}
-
-html:not([lang]) body::after {
-  top: 0;
+html:not([lang]) head::before {
+  position: static;
+  margin-top: var(--spacing);
 
   content:
     'Missing [lang="…"] on <html>'
@@ -350,12 +362,22 @@ head > style:not(:first-of-type)::after {
 }
 
 /*
+Empty `title`.
+=================================================*/
+
+title:empty::after {
+  content:
+    "<title> cannot be empty"
+  ;
+}
+
+/*
 Non-async `script` tags.
 =================================================*/
 
 script:empty[src]:not([async])::after {
   content:
-    '<script> with [src="…"] needs `async` attribute'
+    'Consider [async] for <script> with [src="…"]'
   ;
 }
 

@@ -13,6 +13,7 @@ Variables.
 
 :root {
   --body-font-size: 1.5rem;
+  --max-page-width: 900px;
   --spacing: 2rem;
 }
 
@@ -46,7 +47,7 @@ body {
   font-size: var(--body-font-size);
   line-height: 1.5;
 
-  max-width: 900px;
+  max-width: var(--max-page-width);
   margin-left: auto;
   margin-right: auto;
 
