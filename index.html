@@ -41,21 +41,26 @@
       <b>
         <a href="javascript:(
           function (d) {
-            var s = 'style, [rel=\'stylesheet\']';
-            var styles = d.querySelectorAll(s);
+            var f = Array.prototype.forEach;
+            var linkTags = d.querySelectorAll('[rel=\'stylesheet\']');
+            var styleTags = d.querySelectorAll('style');
 
-            [].forEach.call(styles, function (style) {
-              style.parentNode.removeChild(style);
+            f.call(linkTags, function (x) {
+              x.rel = '';
             });
 
-            var link = d.createElement('link');
+            f.call(styleTags, function (x) {
+              x.innerHTML = '';
+            });
 
-            link.rel = 'stylesheet';
+            var newLink = d.createElement('link');
 
-            link.href =
+            newLink.rel = 'stylesheet';
+
+            newLink.href =
               'https://t7.github.io/trashy.css/css/bookmarklet.css';
 
-            d.head.appendChild(link);
+            d.head.appendChild(newLink);
           }
         )(document);">
           GET TRASHY!
