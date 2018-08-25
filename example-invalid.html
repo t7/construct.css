@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="./css/sanitize.css" />
 <link rel="stylesheet" href="./css/trashy.css" />
 <link rel="stylesheet" href="./css/trashy.boxes.css" />
+<link rel="stylesheet" href="./css/trashy.debug.css" />
 
 <!-- One `style` tag is okay. -->
 <style>
@@ -32,35 +33,21 @@ div {
 <!-- Inline `script` tag. -->
 <script>
 (function (d) {
-  /*
-    This simulate the insertion
-    of analytics and tracker JS.
-
-    For whatever reason, these
-    scripts are inserted as a
-    direct child of `html`.
-  */
   var html = d.documentElement
   var script1 = d.createElement('script')
   var script2 = d.createElement('script')
   var script3 = d.createElement('script')
-  var script4 = d.createElement('script')
-  var script5 = d.createElement('script')
-  var script6 = d.createElement('script')
 
   // Wait for `body` to render.
   setTimeout(function () {
     // `:first-child` of `html`.
     html.insertBefore(script1, d.head)
-    html.insertBefore(script2, d.head)
 
     // Between `head` and `body`.
-    html.insertBefore(script3, d.body)
-    html.insertBefore(script4, d.body)
+    html.insertBefore(script2, d.body)
 
     // `:last-child` of `html`.
-    html.appendChild(script5)
-    html.appendChild(script6)
+    html.appendChild(script3)
   }, 0)
 })(document)
 </script>
