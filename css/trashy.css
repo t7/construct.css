@@ -116,8 +116,8 @@ input[type="submit"]:not([disabled]) {
 Images.
 ==================================================*/
 
-img {
-  display: inline-block;
+img,
+video {
   max-width: 100%;
   height: auto;
 }
