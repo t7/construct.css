@@ -30,8 +30,8 @@ head {
 
 body style,
 head > :first-child:not([charset="utf-8"]),
-html > script,
 head > style:not(:first-of-type),
+html > script,
 script:empty[src]:not([async]),
 script:not(:empty):not([src]),
 title:empty {
@@ -52,6 +52,14 @@ title:empty {
 /*
 Spacing for `script` as child of `html`.
 =================================================*/
+
+html > script:first-child {
+  margin-top: var(--spacing);
+}
+
+html > script:last-child {
+  margin-bottom: var(--spacing);
+}
 
 html > script + head {
   margin-top: calc(-1 * var(--spacing));
