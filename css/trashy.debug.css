@@ -32,6 +32,7 @@ body style,
 head > :first-child:not([charset="utf-8"]),
 head > style:not(:first-of-type),
 script:empty[src]:not([async]),
+script:not(:empty):not([src]),
 title:empty {
   display: block;
 
@@ -117,6 +118,7 @@ input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label:not([for])::after,
 script:empty[src]:not([async])::after,
+script:not(:empty):not([src])::after,
 table[role="presentation"]::after,
 thead th[scope]:not([scope="col"])::after,
 title:empty::after,
@@ -372,7 +374,7 @@ title:empty::after {
 }
 
 /*
-Non-async `script` tags.
+`script` tags.
 =================================================*/
 
 script:empty[src]:not([async])::after {
@@ -381,6 +383,13 @@ script:empty[src]:not([async])::after {
   ;
 }
 
+script:not(:empty):not([src])::after {
+  content:
+    'Move inline <script> to external *.js file'
+  ;
+}
+
+body script:not(:empty):not([src])::after,
 body script:empty[src]:not([async])::after {
   top: 0;
 }
