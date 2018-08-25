@@ -53,6 +53,10 @@ title:empty {
 Spacing for `script` as child of `html`.
 =================================================*/
 
+html > script {
+  margin-top: var(--spacing);
+}
+
 html > script + head {
   margin-top: calc(-1 * var(--spacing));
 }
@@ -63,6 +67,10 @@ html > head + script {
 
 html > script + body {
   padding-top: 0;
+}
+
+html > body + script {
+  margin-top: 0;
 }
 
 /*
