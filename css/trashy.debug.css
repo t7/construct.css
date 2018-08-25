@@ -58,10 +58,10 @@ html > script {
 Outline "invalid" markup.
 ==================================================*/
 
-[style]:not(body):not(html),
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
+[style]:not(body):not(html),
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
@@ -70,25 +70,25 @@ body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not
 button:not([type]),
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
-figure > figcaption:not(:first-child):not(:last-child),
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption),
+figure > figcaption:not(:first-child):not(:last-child),
 figure > figcaption:not(:first-of-type),
+img:not([alt]),
+img:not([src]),
+input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
+input:not([type]),
 input:not([type]),
 input[type="checkbox"] + label,
 input[type="radio"] + label,
 input[type="radio"]:not([name]),
-input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby])
-img:not([alt]),
-img:not([src]),
-input:not([type]),
 label:not([for]),
+ol > :not(li),
+select:not([id]):not([aria-label]):not([aria-labelledby])
 table[role="presentation"],
-thead th[scope]:not([scope="col"]),
 tbody th[scope]:not([scope="row"]),
-ul > :not(li),
-ol > :not(li) {
+textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+thead th[scope]:not([scope="col"]),
+ul > :not(li) {
   outline: var(--flag-invalid-outline);
   position: relative;
 }
@@ -97,10 +97,10 @@ ol > :not(li) {
 Visual style for warning indicators.
 ==================================================*/
 
-[style]:not(body):not(html)::after,
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li,
+[style]:not(body):not(html)::after,
 a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
@@ -112,8 +112,8 @@ body[style]::before,
 button:not([type])::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
-figure > figcaption:not(:first-child):not(:last-child)::after,
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
+figure > figcaption:not(:first-child):not(:last-child)::after,
 figure > figcaption:not(:first-of-type)::after,
 head > :first-child:not([charset="utf-8"])::after,
 head > style:not(:first-of-type)::after,
@@ -124,14 +124,14 @@ input:not([type])::after,
 input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label:not([for])::after,
+ol > :not(li)::after,
 script:not([src])::after,
 script[src]:not([async])::after,
 table[role="presentation"]::after,
+tbody th[scope]:not([scope="row"])::after,
 thead th[scope]:not([scope="col"])::after,
 title:empty::after,
-tbody th[scope]:not([scope="row"])::after,
-ul > :not(li)::after,
-ol > :not(li)::after {
+ul > :not(li)::after {
   background: var(--flag-invalid-color);
   color: #fff;
   display: inline-block;
