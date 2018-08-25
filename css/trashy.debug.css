@@ -48,6 +48,11 @@ title:empty {
   margin-bottom: var(--spacing);
 }
 
+/* Hide injected `script`. */
+html > script {
+  display: none !important;
+}
+
 /*
 Outline "invalid" markup.
 ==================================================*/
