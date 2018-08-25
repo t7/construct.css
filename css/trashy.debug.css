@@ -67,7 +67,10 @@ html > script + head {
 
 html > head + script {
   margin-top: var(--spacing-double);
-  margin-bottom: 0;
+}
+
+html > script + body {
+  padding-top: 0;
 }
 
 /*
