@@ -32,24 +32,7 @@ div {
 
 <!-- Inline `script` tag. -->
 <script>
-(function (d) {
-  var html = d.documentElement
-  var script1 = d.createElement('script')
-  var script2 = d.createElement('script')
-  var script3 = d.createElement('script')
-
-  // Wait for `body` to render.
-  setTimeout(function () {
-    // `:first-child` of `html`.
-    html.insertBefore(script1, d.head)
-
-    // Between `head` and `body`.
-    html.insertBefore(script2, d.body)
-
-    // `:last-child` of `html`.
-    html.appendChild(script3)
-  }, 0)
-})(document)
+// Move to external *.js file.
 </script>
 
 </head>
