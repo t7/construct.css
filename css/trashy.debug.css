@@ -49,20 +49,13 @@ title:empty {
   margin-bottom: var(--spacing);
 }
 
-/*
-Spacing for `script` as child of `html`.
-=================================================*/
-
 html > script:first-child {
   margin-top: var(--spacing);
+  margin-bottom: 0;
 }
 
 html > script:last-child {
   margin-bottom: var(--spacing);
-}
-
-html > script + head {
-  margin-top: calc(-1 * var(--spacing));
 }
 
 html > head + script {
