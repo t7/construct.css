@@ -31,6 +31,7 @@ head {
 body style,
 head > :first-child:not([charset="utf-8"]),
 head > style:not(:first-of-type),
+html > script,
 script:empty[src]:not([async]),
 script:not(:empty):not([src]),
 title:empty {
@@ -48,9 +49,18 @@ title:empty {
   margin-bottom: var(--spacing);
 }
 
-/* Hide injected `script`. */
-html > script {
-  display: none !important;
+html > script:first-child {
+  margin-top: var(--spacing);
+  margin-bottom: 0;
+}
+
+html > script:last-child {
+  margin-bottom: var(--spacing);
+}
+
+html > script:not(:first-child):not(:last-child) {
+  margin-top: var(--spacing-double);
+  margin-bottom: 0;
 }
 
 /*
@@ -115,6 +125,7 @@ figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcapt
 figure > figcaption:not(:first-of-type)::after,
 head > :first-child:not([charset="utf-8"])::after,
 head > style:not(:first-of-type)::after,
+html > script::after,
 html:not([lang]) head::before,
 img:not([alt])::after,
 img:not([src])::after,
@@ -382,6 +393,12 @@ title:empty::after {
 `script` tags.
 =================================================*/
 
+html > script::after,
+body script:not(:empty):not([src])::after,
+body script:empty[src]:not([async])::after {
+  top: 0;
+}
+
 script:empty[src]:not([async])::after {
   content:
     'Consider [async] for <script> with [src="…"]'
@@ -394,9 +411,10 @@ script:not(:empty):not([src])::after {
   ;
 }
 
-body script:not(:empty):not([src])::after,
-body script:empty[src]:not([async])::after {
-  top: 0;
+html > script::after {
+  content:
+    "<script> cannot be immediate child of <html>" !important
+  ;
 }
 
 /*
