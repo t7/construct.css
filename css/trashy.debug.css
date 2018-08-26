@@ -83,8 +83,8 @@ input[type="radio"] + label,
 input[type="radio"]:not([name]),
 label:not([for]),
 ol > :not(li),
-select:not([id]):not([aria-label]):not([aria-labelledby])
-table[role="presentation"],
+select:not([id]):not([aria-label]):not([aria-labelledby]),
+table[role="presentation"] tr:first-child td:first-child,
 tbody th[scope]:not([scope="row"]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
 thead th[scope]:not([scope="col"]),
@@ -127,7 +127,7 @@ label:not([for])::after,
 ol > :not(li)::after,
 script:not([src])::after,
 script[src]:not([async])::after,
-table[role="presentation"]::after,
+table[role="presentation"] tr:first-child td:first-child::after,
 tbody th[scope]:not([scope="row"])::after,
 thead th[scope]:not([scope="col"])::after,
 title:empty::after,
@@ -344,7 +344,7 @@ Flag `<table role="presentation">`.
 =================================================
 */
 
-table[role="presentation"]::after {
+table[role="presentation"] tr:first-child td:first-child::after {
   content:
     '<table> has [role="presentation"] - Use Flexbox instead?'
   ;
