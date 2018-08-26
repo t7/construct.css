@@ -319,7 +319,7 @@ abbr:not([title])::after {
 Empty elements.
 ==================================================*/
 
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(param):not(source):not(style):not(textarea):not(track):not(wbr)::after {
+body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after {
   content:
     'Empty element: Consider [aria-hidden="true"]'
   ;
