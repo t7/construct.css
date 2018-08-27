@@ -2,6 +2,7 @@
 "Box" level elements.
 ==================================================*/
 
+address,
 article,
 aside,
 div,
@@ -26,6 +27,7 @@ section {
   margin-bottom: var(--spacing);
 }
 
+address > :last-child,
 article > :last-child,
 aside > :last-child,
 div > :last-child,
@@ -45,6 +47,7 @@ section > :last-child {
   margin-bottom: 0;
 }
 
+address::before,
 article::before,
 aside::before,
 div::before,
@@ -77,6 +80,10 @@ section::before {
 BOXES: BEFORE.
 ==============
 */
+
+address::before {
+  content: "address";
+}
 
 article::before {
   content: "article";
