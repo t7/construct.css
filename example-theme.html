@@ -15,6 +15,12 @@
 </head>
 <body>
 
+<noscript>
+  <p>
+    This content is shown when JavaScript is disabled.
+  </p>
+</noscript>
+
 <header role="banner">
 
   <h1>
@@ -55,25 +61,29 @@
       </figcaption>
     </figure>
 
-    <h2>
-      Heading level 2
-    </h2>
+    <hgroup>
 
-    <h3>
-      Heading level 3
-    </h3>
+      <h2>
+        Heading level 2
+      </h2>
 
-    <h4>
-      Heading level 4
-    </h4>
+      <h3>
+        Heading level 3
+      </h3>
 
-    <h5>
-      Heading level 5
-    </h5>
+      <h4>
+        Heading level 4
+      </h4>
 
-    <h6>
-      Heading level 6
-    </h6>
+      <h5>
+        Heading level 5
+      </h5>
+
+      <h6>
+        Heading level 6
+      </h6>
+
+    </hgroup>
 
     <section>
 
@@ -194,6 +204,47 @@ const myFunction = (o = {}) => {
       </tr>
     </tbody>
   </table>
+
+  <form
+    oninput="
+      DEMO_OUTPUT.value = (
+        DEMO_INPUT.value ||
+        DEMO_OUTPUT.getAttribute('data-value')
+      )
+    "
+    onsubmit="return false"
+  >
+
+    <fieldset>
+
+      <legend>
+        Example <code>output</code> tag
+      </legend>
+
+      <p>
+        <output
+          id="DEMO_OUTPUT"
+          name="DEMO_OUTPUT"
+          data-value="(Type in text box below.)"
+        >
+          (Type in text box below.)
+        </output>
+      </p>
+
+      <p>
+        <label for="DEMO_INPUT">
+          Type here
+        </label>
+        <input
+          id="DEMO_INPUT"
+          name="DEMO_INPUT"
+          type="text"
+        />
+      </p>
+
+    </fieldset>
+
+  </form>
 
   <form onsubmit="return false">
 

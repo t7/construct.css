@@ -10,17 +10,33 @@ figcaption,
 footer,
 form,
 header,
+hgroup,
 main,
 nav,
+output,
 section {
   border: 1px dashed #f0f;
+  display: block;
   position: relative;
 
-  padding-top: var(--spacing);
-  padding-left: var(--spacing);
-  padding-right: var(--spacing);
-
+  padding: var(--spacing);
   margin-bottom: var(--spacing);
+}
+
+article > :last-child,
+aside > :last-child,
+div > :last-child,
+figure > :last-child,
+figcaption > :last-child,
+footer > :last-child,
+form > :last-child,
+header > :last-child,
+hgroup > :last-child,
+main > :last-child,
+nav > :last-child,
+output > :last-child,
+section > :last-child {
+  margin-bottom: 0;
 }
 
 article::before,
@@ -31,8 +47,10 @@ figcaption::before,
 footer::before,
 form::before,
 header::before,
+hgroup::before,
 main::before,
 nav::before,
+output::before,
 section::before {
   color: #f0f;
   font-family: "Courier", monospace;
@@ -83,12 +101,20 @@ header::before {
   content: "header";
 }
 
+hgroup::before {
+  content: "hgroup";
+}
+
 main::before {
   content: "main";
 }
 
 nav::before {
   content: "nav";
+}
+
+output::before {
+  content: "output";
 }
 
 section::before {
