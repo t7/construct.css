@@ -354,6 +354,10 @@ textarea {
   padding-bottom: 0.5rem;
 }
 
+textarea[disabled] {
+  resize: none;
+}
+
 /*
   Add a "down" arrow to
   `<select>` in Webkit.
