@@ -61,7 +61,7 @@ Outline "invalid" markup.
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
-[style]:not(body):not(html),
+[style]:not(body):not(html):not(textarea),
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
@@ -87,6 +87,7 @@ select:not([id]):not([aria-label]):not([aria-labelledby]),
 table[role="presentation"] tr:first-child td:first-child,
 tbody th[scope]:not([scope="row"]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+textarea[style]:not([style*="height:"]),
 thead th[scope]:not([scope="col"]),
 ul > :not(li) {
   outline: var(--flag-invalid-outline);
@@ -100,7 +101,7 @@ Visual style for warning indicators.
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li,
-[style]:not(body):not(html)::after,
+[style]:not(body):not(html):not(textarea)::after,
 a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
@@ -159,7 +160,7 @@ ul > :not(li)::after {
 Inline `style`.
 ==================================================*/
 
-[style]:not(body):not(html)::after {
+[style]:not(body):not(html):not(textarea)::after {
   content:
     'Inline [style="…"] detected'
   ;
