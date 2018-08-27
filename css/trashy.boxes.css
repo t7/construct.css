@@ -5,6 +5,9 @@
 article,
 aside,
 div,
+dd,
+dl,
+dt,
 figure,
 figcaption,
 footer,
@@ -26,6 +29,9 @@ section {
 article > :last-child,
 aside > :last-child,
 div > :last-child,
+dd > :last-child,
+dl > :last-child,
+dt > :last-child,
 figure > :last-child,
 figcaption > :last-child,
 footer > :last-child,
@@ -42,6 +48,9 @@ section > :last-child {
 article::before,
 aside::before,
 div::before,
+dd::before,
+dl::before,
+dt::before,
 figure::before,
 figcaption::before,
 footer::before,
@@ -79,6 +88,18 @@ aside::before {
 
 div::before {
   content: "div";
+}
+
+dd::before {
+  content: "dd";
+}
+
+dl::before {
+  content: "dl";
+}
+
+dt::before {
+  content: "dt";
 }
 
 figure::before {

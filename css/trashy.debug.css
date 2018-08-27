@@ -58,6 +58,8 @@ html > script {
 Outline "invalid" markup.
 ==================================================*/
 
+:not(dl) > dd,
+:not(dl) > dt,
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
@@ -68,6 +70,8 @@ a[target]:not([rel*="noreferrer"]),
 abbr:not([title]),
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr),
 button:not([type]),
+dl > :not(dt):not(dd),
+dl > dd:first-child,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption),
@@ -98,9 +102,11 @@ ul > :not(li) {
 Visual style for warning indicators.
 ==================================================*/
 
+:not(dl) > dd::after,
+:not(dl) > dt::after,
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
-:not(ul):not(ol) > li,
+:not(ul):not(ol) > li::after,
 [style]:not(body):not(html):not(textarea)::after,
 a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
@@ -111,6 +117,8 @@ body link::after,
 body style::after,
 body[style]::before,
 button:not([type])::after,
+dl > :not(dt):not(dd)::after,
+dl > dd:first-child::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
@@ -235,11 +243,49 @@ figure > figcaption:not(:first-of-type)::after {
 Invalid `li` nesting.
 ==================================================*/
 
-:not(ul):not(ol) > li,
-ul > :not(li)::after,
+:not(ul):not(ol) > li::after {
+  content:
+    "<li> is missing a parent <ul> or <ol>"
+  ;
+}
+
 ol > :not(li)::after {
   content:
-    "<li> must be immediate child of <ul> or <ol>"
+    "Immediate child of <ol> must be <li>"
+  ;
+}
+
+ul > :not(li)::after {
+  content:
+    "Immediate child of <ul> must be <li>"
+  ;
+}
+
+/*
+Invalid `dd` nesting.
+==================================================*/
+
+:not(dl) > dd::after {
+  content:
+    "<dd> is missing a parent <dl>"
+  ;
+}
+
+:not(dl) > dt::after {
+  content:
+    "<dt> is missing a parent <dl>"
+  ;
+}
+
+dl > :not(dt):not(dd)::after {
+  content:
+    "Immediate child of <dl> must be <dt> or <dd>"
+  ;
+}
+
+dl > dd:first-child::after {
+  content:
+    "<dt> should be :first-child of <dl>, not <dd>"
   ;
 }
 
