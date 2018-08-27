@@ -19,8 +19,7 @@ hgroup,
 main,
 nav,
 output,
-section,
-video {
+section {
   border: 1px dashed #f0f;
   display: block;
   position: relative;
@@ -45,8 +44,7 @@ hgroup > :last-child,
 main > :last-child,
 nav > :last-child,
 output > :last-child,
-section > :last-child,
-video > :last-child {
+section > :last-child {
   margin-bottom: 0;
 }
 
@@ -66,8 +64,7 @@ hgroup::before,
 main::before,
 nav::before,
 output::before,
-section::before,
-video::before {
+section::before {
   color: #f0f;
   font-family: "Courier", monospace;
   font-size: 1rem;
@@ -151,10 +148,6 @@ output::before {
 
 section::before {
   content: "section";
-}
-
-video::before {
-  content: "video";
 }
 
 /*
