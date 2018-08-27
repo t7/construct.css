@@ -15,7 +15,7 @@
 
 <noscript>
   <p>
-    This content is shown when JavaScript is disabled.
+    This is shown when JavaScript is disabled.
   </p>
 </noscript>
 
@@ -203,15 +203,7 @@ const myFunction = (o = {}) => {
     </tbody>
   </table>
 
-  <form
-    oninput="
-      DEMO_OUTPUT.value = (
-        DEMO_INPUT.value ||
-        DEMO_OUTPUT.getAttribute('data-value')
-      )
-    "
-    onsubmit="return false"
-  >
+  <form onsubmit="return false">
 
     <fieldset>
 
@@ -237,14 +229,16 @@ const myFunction = (o = {}) => {
           id="DEMO_INPUT"
           name="DEMO_INPUT"
           type="text"
+          oninput="
+            DEMO_OUTPUT.value = (
+              DEMO_INPUT.value ||
+              DEMO_OUTPUT.getAttribute('data-value')
+            )
+          "
         />
       </p>
 
     </fieldset>
-
-  </form>
-
-  <form onsubmit="return false">
 
     <fieldset>
 
