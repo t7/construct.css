@@ -48,6 +48,30 @@
 <hr />
 
 <p>
+  Improperly nested <code>div</code>, inside <code>span</code>.
+</p>
+
+<span>
+  <div>
+    Invalid nesting.
+  </div>
+</span>
+
+<hr />
+
+<p>
+  Improperly nested <code>div</code>, inside <code>p</code>.
+</p>
+
+<p>
+  <div>
+    Invalid nesting.
+  </div>
+</p>
+
+<hr />
+
+<p>
   Missing <code>title</code> attribute in <code>abbr</code>.
 </p>
 
@@ -69,9 +93,7 @@
     src="https://picsum.photos/900/100"
   />
   <figcaption>
-    <p>
-      Image description
-    </p>
+    Image description
   </figcaption>
   <p>
     (This paragraph is <code>:last-child</code>.)
@@ -86,18 +108,14 @@
 
 <figure>
   <figcaption>
-    <p>
-      Image description
-    </p>
+    Image description
   </figcaption>
   <img
     alt="(Image source omitted)"
     height="100"
   />
   <figcaption>
-    <p>
-      Image description
-    </p>
+    Image description
   </figcaption>
 </figure>
 
@@ -108,9 +126,7 @@
 </p>
 
 <figcaption>
-  <p>
-    This <code>figcaption</code> lacks a <code>figure</code> parent.
-  <p>
+  This <code>figcaption</code> lacks a <code>figure</code> parent.
 </figcaption>
 
 <hr />
@@ -309,6 +325,22 @@
   <tr>
     <td>
       Table with <code>role="presentation"</code>
+    </td>
+  </tr>
+</table>
+
+<hr />
+
+<table>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>
+            Table nested inside another <code>table</code>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

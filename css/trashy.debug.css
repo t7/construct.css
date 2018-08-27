@@ -1,6 +1,7 @@
 /*
 Variables.
-==================================================*/
+==================================================
+*/
 
 :root {
   --flag-invalid-color: #f00;
@@ -14,7 +15,8 @@ Variables.
 
 /*
 Warnings for `head` and `style`.
-=================================================*/
+=================================================
+*/
 
 head {
   display: block;
@@ -56,7 +58,8 @@ html > script {
 
 /*
 Outline "invalid" markup.
-==================================================*/
+==================================================
+*/
 
 :not(dl) > dd,
 :not(dl) > dt,
@@ -67,16 +70,22 @@ Outline "invalid" markup.
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
 a[target]:not([rel*="noreferrer"]),
+abbr div,
 abbr:not([title]),
+b div,
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr),
 button:not([type]),
+cite div,
+code div,
 dl > :not(dt):not(dd),
 dl > dd:first-child,
+em div,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption),
 figure > figcaption:not(:first-child):not(:last-child),
 figure > figcaption:not(:first-of-type),
+i div,
 img:not([alt]),
 img:not([src]),
 input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
@@ -85,9 +94,16 @@ input:not([type]),
 input[type="checkbox"] + label,
 input[type="radio"] + label,
 input[type="radio"]:not([name]),
+label div,
 label:not([for]),
 ol > :not(li),
+p div,
+q div,
 select:not([id]):not([aria-label]):not([aria-labelledby]),
+small div,
+span div,
+strong div,
+table table tr:first-child td:first-child,
 table[role="presentation"] tr:first-child td:first-child,
 tbody th[scope]:not([scope="row"]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
@@ -100,7 +116,8 @@ ul > :not(li) {
 
 /*
 Visual style for warning indicators.
-==================================================*/
+==================================================
+*/
 
 :not(dl) > dd::after,
 :not(dl) > dt::after,
@@ -111,14 +128,19 @@ Visual style for warning indicators.
 a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after,
+abbr div::after,
 abbr:not([title])::after,
+b div::after,
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after,
 body link::after,
 body style::after,
 body[style]::before,
 button:not([type])::after,
+cite div::after,
+code div::after,
 dl > :not(dt):not(dd)::after,
 dl > dd:first-child::after,
+em div::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
@@ -127,15 +149,23 @@ figure > figcaption:not(:first-of-type)::after,
 head > :first-child:not([charset="utf-8"])::after,
 head > style:not(:first-of-type)::after,
 html:not([lang]) head::before,
+i div::after,
 img:not([alt])::after,
 img:not([src])::after,
 input:not([type])::after,
 input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
+label div::after,
 label:not([for])::after,
 ol > :not(li)::after,
+p div::after,
+q div::after,
 script:not([src])::after,
 script[src]:not([async])::after,
+small div::after,
+span div::after,
+strong div::after,
+table table tr:first-child td:first-child::after,
 table[role="presentation"] tr:first-child td:first-child::after,
 tbody th[scope]:not([scope="row"])::after,
 thead th[scope]:not([scope="col"])::after,
@@ -166,7 +196,8 @@ ul > :not(li)::after {
 
 /*
 Inline `style`.
-==================================================*/
+==================================================
+*/
 
 [style]:not(body):not(html):not(textarea)::after {
   content:
@@ -185,7 +216,8 @@ body[style]::before {
 
 /*
 Risky links.
-==================================================*/
+==================================================
+*/
 
 a[href^="http:"]::after {
   content:
@@ -202,7 +234,8 @@ a[target]:not([rel*="noreferrer"])::after {
 
 /*
 Table: Incorrect `scope` values.
-==================================================*/
+==================================================
+*/
 
 thead th[scope]:not([scope="col"])::after {
   content:
@@ -218,7 +251,8 @@ tbody th[scope]:not([scope="row"])::after {
 
 /*
 Invalid `figcaption` nesting.
-==================================================*/
+==================================================
+*/
 
 :not(figure) > figcaption::after {
   content:
@@ -241,7 +275,8 @@ figure > figcaption:not(:first-of-type)::after {
 
 /*
 Invalid `li` nesting.
-==================================================*/
+==================================================
+*/
 
 :not(ul):not(ol) > li::after {
   content:
@@ -263,7 +298,8 @@ ul > :not(li)::after {
 
 /*
 Invalid `dd` nesting.
-==================================================*/
+==================================================
+*/
 
 :not(dl) > dd::after {
   content:
@@ -291,7 +327,8 @@ dl > dd:first-child::after {
 
 /*
 Invalid `legend` position in `fieldset`.
-==================================================*/
+==================================================
+*/
 
 fieldset > :not(legend):first-child::after {
   content:
@@ -308,7 +345,8 @@ fieldset > legend:not(:first-child)::after {
 
 /*
 Missing `for` on `label`.
-==================================================*/
+==================================================
+*/
 
 label:not([for])::after {
   content:
@@ -318,7 +356,8 @@ label:not([for])::after {
 
 /*
 Missing `type` on `button`.
-==================================================*/
+==================================================
+*/
 
 button:not([type])::after {
   content:
@@ -328,7 +367,8 @@ button:not([type])::after {
 
 /*
 Missing `src` on `image`.
-==================================================*/
+==================================================
+*/
 
 img:not([src])::after {
   content:
@@ -338,7 +378,8 @@ img:not([src])::after {
 
 /*
 Adjacent "checkbox" and "radio" labels.
-==================================================*/
+==================================================
+*/
 
 input[type="checkbox"] + label::after {
   content:
@@ -354,7 +395,8 @@ input[type="radio"] + label::after {
 
 /*
 Missing `title` in `abbr`.
-==================================================*/
+==================================================
+*/
 
 abbr:not([title])::after {
   content:
@@ -364,7 +406,8 @@ abbr:not([title])::after {
 
 /*
 Empty elements.
-==================================================*/
+==================================================
+*/
 
 body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after {
   content:
@@ -398,8 +441,20 @@ table[role="presentation"] tr:first-child td:first-child::after {
 }
 
 /*
+Flag nested `table`.
+=================================================
+*/
+
+table table tr:first-child td:first-child::after {
+  content:
+    "Invalid nested <table> - Use CSS Grid instead?"
+  ;
+}
+
+/*
 Missing `meta[charset]` tag.
-=================================================*/
+=================================================
+*/
 
 head > :first-child:not([charset="utf-8"])::after {
   content:
@@ -409,7 +464,8 @@ head > :first-child:not([charset="utf-8"])::after {
 
 /*
 Redundant `style` tags.
-=================================================*/
+=================================================
+*/
 
 head > style:not(:first-of-type)::after {
   content:
@@ -419,7 +475,8 @@ head > style:not(:first-of-type)::after {
 
 /*
 Empty `title`.
-=================================================*/
+=================================================
+*/
 
 title:empty::after {
   content:
@@ -429,7 +486,8 @@ title:empty::after {
 
 /*
 `script` tags.
-=================================================*/
+=================================================
+*/
 
 script:not([src])::after {
   content:
@@ -450,7 +508,8 @@ body script[src]:not([async])::after {
 
 /*
 `style` not allowed within `body`.
-=================================================*/
+=================================================
+*/
 
 body style::after {
   top: 0;
@@ -462,12 +521,122 @@ body style::after {
 
 /*
 `link` not allowed within `body`.
-=================================================*/
+=================================================
+*/
 
 body link::after {
   top: 0;
 
   content:
     "<link> tag is not allowed within <body>"
+  ;
+}
+
+/*
+Improperly nested `div`.
+=================================================
+*/
+
+abbr div::after {
+  content:
+    "<div> tag is not allowed within <abbr>"
+  ;
+}
+
+b div::after {
+  content:
+    "<div> tag is not allowed within <b>"
+  ;
+}
+
+cite div::after {
+  content:
+    "<div> tag is not allowed within <cite>"
+  ;
+}
+
+code div::after {
+  content:
+    "<div> tag is not allowed within <code>"
+  ;
+}
+
+i div::after {
+  content:
+    "<div> tag is not allowed within <i>"
+  ;
+}
+
+em div::after {
+  content:
+    "<div> tag is not allowed within <em>"
+  ;
+}
+
+label div::after {
+  content:
+    "<div> tag is not allowed within <label>"
+  ;
+}
+
+q div::after {
+  content:
+    "<div> tag is not allowed within <q>"
+  ;
+}
+
+small div::after {
+  content:
+    "<div> tag is not allowed within <small>"
+  ;
+}
+
+span div::after {
+  content:
+    "<div> tag is not allowed within <span>"
+  ;
+}
+
+strong div::after {
+  content:
+    "<div> tag is not allowed within <strong>"
+  ;
+}
+
+/*
+Improperly nested `div` inside `p`.
+=================================================
+*/
+
+/*
+  NOTE: Chrome and Firefox render this oddly.
+
+  ```
+  <!-- ACTUAL. -->
+  <p class="foo">
+    <div class="bar">Invalid</div>
+  </p>
+  ```
+
+  ```
+  <!-- RENDERED. -->
+  <p class="foo">
+  </p>
+  <div class="bar">
+    Invalid
+  </div>
+  <p></p>
+  ```
+*/
+
+p + div:not(:empty) + p:empty {
+  top: calc(-1 * var(--spacing));
+  outline: none !important;
+}
+
+p div::after,
+p + div:not(:empty) + p:empty::after {
+  content:
+    "<div> tag is not allowed within <p>" !important
   ;
 }
