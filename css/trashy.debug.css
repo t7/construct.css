@@ -5,9 +5,7 @@ Variables.
 
 :root {
   --flag-invalid-color: #f00;
-
-  --spacing-double:
-    calc(2 * var(--spacing));
+  --spacing-double: calc(2 * var(--spacing));
 }
 
 /*
@@ -63,6 +61,10 @@ Outline "invalid" markup.
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
+[role="banner"]:not(header),
+[role="contentinfo"]:not(footer),
+[role="main"]:not(main),
+[role="navigation"]:not(nav),
 [style]:not(body):not(html):not(textarea),
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
@@ -121,6 +123,10 @@ Visual style for warning indicators.
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li::after,
+[role="banner"]:not(header)::after,
+[role="contentinfo"]:not(footer)::after,
+[role="main"]:not(main)::after,
+[role="navigation"]:not(nav)::after,
 [style]:not(body):not(html):not(textarea)::after,
 a[href^="http:"]::after,
 a[target]:not([rel*="noopener"])::after,
@@ -708,5 +714,34 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
 
   content:
     '"Div-itis!" - Needlessly nested <div> tags (9+).'
+  ;
+}
+
+/*
+ARIA landmark roles.
+==================================================
+*/
+
+[role="banner"]:not(header)::after {
+  content:
+    '[role="banner"] is typically used with <header>'
+  ;
+}
+
+[role="contentinfo"]:not(footer)::after {
+  content:
+    '[role="contentinfo"] is typically used with <footer>'
+  ;
+}
+
+[role="main"]:not(main)::after {
+  content:
+    '[role="main"] is typically used with <main>'
+  ;
+}
+
+[role="navigation"]:not(nav)::after {
+  content:
+    '[role="navigation"] is typically used with <nav>'
   ;
 }
