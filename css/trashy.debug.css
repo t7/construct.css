@@ -6,9 +6,6 @@ Variables.
 :root {
   --flag-invalid-color: #f00;
 
-  --flag-invalid-outline:
-    2px solid var(--flag-invalid-color);
-
   --spacing-double:
     calc(2 * var(--spacing));
 }
@@ -110,7 +107,7 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby]),
 textarea[style]:not([style*="height:"]),
 thead th[scope]:not([scope="col"]),
 ul > :not(li) {
-  outline: var(--flag-invalid-outline);
+  box-shadow: 0 0 0 2px var(--flag-invalid-color);
   position: relative;
 }
 
@@ -177,15 +174,15 @@ ul > :not(li)::after {
   display: inline-block;
 
   font-family: Verdana, sans-serif;
-  font-size: 11px;
+  font-size: 1.1rem;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: none;
   text-indent: 0;
   white-space: nowrap;
 
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   pointer-events: none;
 
@@ -631,8 +628,8 @@ Improperly nested `div` inside `p`.
 */
 
 p + div:not(:empty) + p:empty {
+  box-shadow: none !important;
   top: calc(-1 * var(--spacing));
-  outline: none !important;
 }
 
 p div::after,
