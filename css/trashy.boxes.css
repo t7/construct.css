@@ -65,6 +65,7 @@ main::before,
 nav::before,
 output::before,
 section::before {
+  background: #fff;
   color: #f0f;
   font-family: "Courier", monospace;
   font-size: 1rem;
@@ -148,6 +149,24 @@ output::before {
 
 section::before {
   content: "section";
+}
+
+/*
+Div-itis.
+==================================================
+*/
+
+div > div:not([role]):only-child {
+  border: 0;
+  padding: 0;
+}
+
+div > div:not([role]):only-child::before {
+  --offset: calc(-1 * var(--spacing));
+
+  margin-top: var(--offset);
+  margin-left: var(--offset);
+  content: "div-itis";
 }
 
 /*

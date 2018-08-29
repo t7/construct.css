@@ -138,6 +138,7 @@ body[style]::before,
 button:not([type])::after,
 cite div::after,
 code div::after,
+div > div:not([role]):only-child::after,
 dl > :not(dt):not(dd)::after,
 dl > dd:first-child::after,
 em div::after,
@@ -638,5 +639,77 @@ p div::after,
 p + div:not(:empty) + p:empty::after {
   content:
     "<div> tag is not allowed within <p>" !important
+  ;
+}
+
+/*
+"Div-itis" detection.
+==================================================
+*/
+
+div > div:not([role]):only-child::after {
+  --offset: calc(1px + var(--spacing));
+
+  margin-left: calc(-1 * var(--offset));
+  margin-top: var(--offset);
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (2).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 2;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (3).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 3;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (4).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 4;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (5).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 5;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (6).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 6;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (7).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 7;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (8).'
+  ;
+}
+
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+  z-index: 8;
+
+  content:
+    '"Div-itis!" - Needlessly nested <div> tags (9+).'
   ;
 }
