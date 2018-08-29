@@ -141,7 +141,7 @@ body[style]::before,
 button:not([type])::after,
 cite div::after,
 code div::after,
-div > div:not([role]):only-child::after,
+div > div:not([role]):not(:empty):only-child::after,
 dl > :not(dt):not(dd)::after,
 dl > dd:first-child::after,
 em div::after,
@@ -650,7 +650,7 @@ p + div:not(:empty) + p:empty::after {
 ==================================================
 */
 
-div > div:not([role]):only-child::after {
+div > div:not([role]):not(:empty):only-child::after {
   --offset: calc(1px + var(--spacing));
 
   margin-left: calc(-1 * var(--offset));
@@ -661,7 +661,7 @@ div > div:not([role]):only-child::after {
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 2;
 
   content:
@@ -669,7 +669,7 @@ div > div:not([role]):only-child > div:not([role]):only-child::after {
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 3;
 
   content:
@@ -677,7 +677,7 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 4;
 
   content:
@@ -685,7 +685,7 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 5;
 
   content:
@@ -693,7 +693,7 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 6;
 
   content:
@@ -701,7 +701,7 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 7;
 
   content:
@@ -709,7 +709,7 @@ div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):
   ;
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child::after {
+div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
   z-index: 8;
 
   content:
