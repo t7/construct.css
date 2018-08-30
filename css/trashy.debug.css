@@ -190,6 +190,13 @@ ul > :not(li)::after {
   z-index: 1;
 }
 
+body link::after,
+body script:not([src])::after,
+body script[src]:not([async])::after,
+body style::after {
+  top: 0;
+}
+
 /*
 Inline `style`.
 ==================================================
@@ -497,19 +504,12 @@ script[src]:not([async])::after {
   ;
 }
 
-body script:not([src])::after,
-body script[src]:not([async])::after {
-  top: 0;
-}
-
 /*
 `style` not allowed within `body`.
 =================================================
 */
 
 body style::after {
-  top: 0;
-
   content:
     "<style> tag is not allowed within <body>"
   ;
@@ -521,8 +521,6 @@ body style::after {
 */
 
 body link::after {
-  top: 0;
-
   content:
     "<link> tag is not allowed within <body>"
   ;
