@@ -61,6 +61,8 @@ Outline "invalid" markup.
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
+[style*="display:none"]:not([hidden]),
+[style*="display: none"]:not([hidden]),
 [style]:not(body):not(html):not(textarea),
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
@@ -107,6 +109,11 @@ thead th[scope]:not([scope="col"]),
 ul > :not(li) {
   box-shadow: 0 0 0 2px var(--flag-invalid-color);
   position: relative;
+}
+
+[style*="display:none"]:not([hidden]),
+[style*="display: none"]:not([hidden]) {
+  display: block !important;
 }
 
 /*
@@ -205,6 +212,13 @@ Inline `style`.
 [style]:not(body):not(html):not(textarea)::after {
   content:
     'Inline [style="…"] detected'
+  ;
+}
+
+[style*="display:none"]:not([hidden])::after,
+[style*="display: none"]:not([hidden])::after {
+  content:
+    'Use [hidden] instead of [style="display: none"]'
   ;
 }
 
