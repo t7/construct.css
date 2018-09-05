@@ -29,8 +29,10 @@ body link,
 body style,
 head > :first-child:not([charset="utf-8"]),
 head > style:not(:first-of-type),
+link[href^="http:"],
 script:not([src]),
 script[src]:not([async]),
+script[src^="http:"],
 title:empty {
   display: block;
 
@@ -61,8 +63,8 @@ Outline "invalid" markup.
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
-[style*="display:none"]:not([hidden]),
 [style*="display: none"]:not([hidden]),
+[style*="display:none"]:not([hidden]),
 [style]:not(body):not(html):not(textarea),
 a[href^="http:"],
 a[target]:not([rel*="noopener"]),
@@ -160,11 +162,13 @@ input[type="checkbox"] + label::after,
 input[type="radio"] + label::after,
 label div::after,
 label:not([for])::after,
+link[href^="http:"]::after,
 ol > :not(li)::after,
 p div::after,
 q div::after,
 script:not([src])::after,
 script[src]:not([async])::after,
+script[src^="http:"]::after,
 small div::after,
 span div::after,
 strong div::after,
@@ -198,8 +202,10 @@ ul > :not(li)::after {
 }
 
 body link::after,
+body link[href^="http:"]::after,
 body script:not([src])::after,
 body script[src]:not([async])::after,
+body script[src^="http:"]::after,
 body style::after {
   top: 0;
 }
@@ -480,17 +486,6 @@ head > :first-child:not([charset="utf-8"])::after {
 }
 
 /*
-Redundant `style` tags.
-=================================================
-*/
-
-head > style:not(:first-of-type)::after {
-  content:
-    "Only use one <style> for crucial CSS"
-  ;
-}
-
-/*
 Empty `title`.
 =================================================
 */
@@ -524,10 +519,22 @@ script[src]:not([src=""]):not([async])::after {
   ;
 }
 
+script[src^="http:"]::after {
+  content:
+    'Consider "https:" for <script> with [src="' attr(src) '"]'
+  ;
+}
+
 /*
-`style` not allowed within `body`.
+Warnings for `style` tags.
 =================================================
 */
+
+head > style:not(:first-of-type)::after {
+  content:
+    "Only use one <style> for crucial CSS"
+  ;
+}
 
 body style::after {
   content:
@@ -536,9 +543,15 @@ body style::after {
 }
 
 /*
-`link` not allowed within `body`.
+`link` tags.
 =================================================
 */
+
+link[href^="http:"]::after {
+  content:
+    'Consider "https:" for <link> with [href="' attr(href) '"]'
+  ;
+}
 
 body link::after {
   content:

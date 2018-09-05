@@ -24,6 +24,12 @@
 <!-- Add `async` to external `script`. -->
 <script src="./does/not/exist"></script>
 
+<!-- Insecure external `script`. -->
+<script src="http://example.com/does/not/exist" async="async"></script>
+
+<!-- Insecure external `link`. -->
+<link href="http://example.com/does/not/exist" />
+
 </head>
 <body style="font-family: inherit">
 
