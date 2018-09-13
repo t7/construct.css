@@ -388,9 +388,11 @@ textarea[disabled] {
 */
 @media (-webkit-min-device-pixel-ratio: 0) {
   select {
-    background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjgwcHgiIHZpZXdCb3g9IjAgMCA1MCA4MCI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iODAiIGZpbGw9IiNGRkYiIGZpbGwtb3BhY2l0eT0iMCIvPjxwb2x5Z29uIGZpbGw9IiMzMzMiIHBvaW50cz0iMCAzNCAzMCAzNCAxNSA0OS4wMzYiLz48L2c+PC9zdmc+);
+
     background-repeat: no-repeat;
     background-position: right center;
+    background-size: contain;
   }
 }
 
