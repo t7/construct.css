@@ -324,27 +324,33 @@ Invalid `dd` nesting.
 ==================================================
 */
 
-:not(dl) > dd::after {
+:not(dl):not(dl > div) > dd::after {
   content:
     "<dd> is missing a parent <dl>"
   ;
 }
 
-:not(dl) > dt::after {
+:not(dl):not(dl > div) > dt::after {
   content:
     "<dt> is missing a parent <dl>"
   ;
 }
 
-dl > :not(dt):not(dd)::after {
+dl > :not(dt):not(div)::after {
   content:
-    "Immediate child of <dl> must be <dt> or <dd>"
+    "Immediate child of <dl> must be <dt> or <div>"
   ;
 }
 
 dl > dd:first-child::after {
   content:
-    "<dt> should be :first-child of <dl>, not <dd>"
+    "<dt> or <div> should be :first-child of <dl>, not <dd>"
+  ;
+}
+
+dl > div > :not(dt):first-child::after {
+  content:
+    "<dt> should be :first-child of <div> within a <dl>, not <dd>"
   ;
 }
 
