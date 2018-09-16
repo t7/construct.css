@@ -157,6 +157,7 @@ Div-itis.
 */
 
 div > div:not([role]):not(:empty):only-child {
+  box-shadow: none;
   border: 0;
   padding: 0;
 }
