@@ -201,13 +201,31 @@
   </p>
 </dl>
 
-<dt>
-  <code>dt</code> without parent <code>dl</code>.
-</dt>
+<dl>
+  <div>
+    <dd>
+      <code>dd</code> - Definition list: Definition
+    </dd>
+    <dt>
+      <code>dt</code> - Definition list: Term
+    </dt>
+    <dd>
+      <code>dd</code> - Definition list: Definition
+    </dd>
+    <p>
+      Invalid item within list.
+    </p>
+  </div>
+</dl>
 
-<dd>
-  <code>dd</code> without parent <code>dl</code>.
-</dd>
+<div>
+  <dt>
+    <code>dt</code> without correct parent.
+  </dt>
+  <dd>
+    <code>dd</code> without correct parent.
+  </dd>
+</div>
 
 <hr />
 

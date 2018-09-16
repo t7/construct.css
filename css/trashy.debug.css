@@ -58,8 +58,10 @@ Outline "invalid" markup.
 ==================================================
 */
 
-:not(dl) > dd,
-:not(dl) > dt,
+:not(dl) > div > dd,
+:not(dl) > div > dt,
+:not(dl):not(div) > dd,
+:not(dl):not(div) > dt,
 :not(fieldset) > legend,
 :not(figure) > figcaption,
 :not(ul):not(ol) > li,
@@ -76,8 +78,10 @@ body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not
 button:not([type]),
 cite div,
 code div,
-dl > :not(dt):not(dd),
+dl > :not(dt):not(dd):not(div),
 dl > dd:first-child,
+dl > div > :not(dt):not(dd),
+dl > div > dd:first-child,
 em div,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
@@ -123,8 +127,10 @@ Visual style for warning indicators.
 ==================================================
 */
 
-:not(dl) > dd::after,
-:not(dl) > dt::after,
+:not(dl) > div > dd::after,
+:not(dl) > div > dt::after,
+:not(dl):not(div) > dd::after,
+:not(dl):not(div) > dt::after,
 :not(fieldset) > legend::after,
 :not(figure) > figcaption::after,
 :not(ul):not(ol) > li::after,
@@ -143,8 +149,10 @@ button:not([type])::after,
 cite div::after,
 code div::after,
 div > div:not([role]):not(:empty):only-child::after,
-dl > :not(dt):not(dd)::after,
+dl > :not(dt):not(dd):not(div)::after,
 dl > dd:first-child::after,
+dl > div > :not(dt):not(dd)::after,
+dl > div > dd:first-child::after,
 em div::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
@@ -324,21 +332,23 @@ Invalid `dd` nesting.
 ==================================================
 */
 
-:not(dl):not(dl > div) > dd::after {
+:not(dl) > div > dd::after,
+:not(dl):not(div) > dd::after {
   content:
-    "<dd> is missing a parent <dl>"
+    "<dd> is missing a parent <dl> or <div>"
   ;
 }
 
-:not(dl):not(dl > div) > dt::after {
+:not(dl) > div > dt::after,
+:not(dl):not(div) > dt::after {
   content:
-    "<dt> is missing a parent <dl>"
+    "<dt> is missing a parent <dl> or <div>"
   ;
 }
 
-dl > :not(dt):not(div)::after {
+dl > :not(dt):not(dd):not(div)::after {
   content:
-    "Immediate child of <dl> must be <dt> or <div>"
+    "Immediate child of <dl> must be <dt>, <dd>, or <div>"
   ;
 }
 
@@ -348,9 +358,15 @@ dl > dd:first-child::after {
   ;
 }
 
-dl > div > :not(dt):first-child::after {
+dl > div > dd:first-child::after {
   content:
-    "<dt> should be :first-child of <div> within a <dl>, not <dd>"
+    "<dt> should be :first-child of <div> within <dl>, not <dd>"
+  ;
+}
+
+dl > div > :not(dt):not(dd)::after {
+  content:
+    "Immediate child of <div> within <dl> must be <dt> or <dd>."
   ;
 }
 
