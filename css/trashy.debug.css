@@ -332,17 +332,27 @@ Invalid `dd` nesting.
 ==================================================
 */
 
-:not(dl) > div > dd::after,
 :not(dl):not(div) > dd::after {
   content:
     "<dd> is missing a parent <dl> or <div>"
   ;
 }
 
-:not(dl) > div > dt::after,
 :not(dl):not(div) > dt::after {
   content:
     "<dt> is missing a parent <dl> or <div>"
+  ;
+}
+
+:not(dl) > div > dd::after {
+  content:
+    "<dd> with parent <div> is missing <dl> grandparent"
+  ;
+}
+
+:not(dl) > div > dt::after {
+  content:
+    "<dt> with parent <div> is missing <dl> grandparent"
   ;
 }
 
