@@ -14,3 +14,4 @@ Trashy.css was inspired by these fine projects:
 
 * https://www.getpapercss.com/
 * https://ffoodd.github.io/a11y.css/
+* https://meyerweb.com/eric/tools/css/diagnostics/
