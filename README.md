@@ -1,6 +1,6 @@
 # Trashy.css
 
-> "**Trashy.css** - The throwaway CSS library with no `class`."
+> "**Trashy.css** - The throwaway CSS library."
 
 Read more…
 
