@@ -1,10 +1,10 @@
-# Trashy.css
+# Construct.css
 
-> "**Trashy.css** - The throwaway CSS library."
+> "**Construct.css** - Focus on the content and structure of your HTML"
 
 Read more…
 
-https://t7.github.io/trashy.css/
+https://t7.github.io/construct.css/
 
 ---
 
