@@ -10,7 +10,7 @@ https://t7.github.io/construct.css/
 
 ## Prior art
 
-Trashy.css was inspired by these fine projects:
+construct.css was inspired by these fine projects:
 
 * https://www.getpapercss.com/
 * https://ffoodd.github.io/a11y.css/
