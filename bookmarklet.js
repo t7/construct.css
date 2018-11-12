@@ -1,5 +1,5 @@
 /*
-  This is the boomarklet in the "GET TRASHY"
+  This is the boomarklet in the "Deconstruct"
   link on this project's index.html page.
 
   It is minified there, so this file is just
@@ -24,7 +24,7 @@
   newLink.rel = 'stylesheet';
 
   newLink.href =
-    'https://t7.github.io/trashy.css/css/bookmarklet.css';
+    'https://t7.github.io/construct.css/css/bookmarklet.css';
 
   d.head.appendChild(newLink);
 })(document);
