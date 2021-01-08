@@ -9,6 +9,15 @@ Variables.
 }
 
 /*
+Clip horizontal overflow.
+=================================================
+*/
+
+html {
+  overflow-x: hidden;
+}
+
+/*
 Warnings for `head` and `style`.
 =================================================
 */
@@ -236,7 +245,7 @@ Inline `style`.
   ;
 }
 
-body[style]::before {
+body[style]:not([style=""])::before {
   position: static;
   margin-bottom: var(--spacing);
 
