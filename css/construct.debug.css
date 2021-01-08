@@ -9,15 +9,6 @@ Variables.
 }
 
 /*
-Clip horizontal overflow.
-=================================================
-*/
-
-html {
-  overflow-x: hidden;
-}
-
-/*
 Warnings for `head` and `style`.
 =================================================
 */

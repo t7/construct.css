@@ -41,6 +41,9 @@ html {
     measurements are base 10, not 16.
   */
   font-size: 62.5%;
+
+  /* Clip horizontal scroll. */
+  overflow-x: hidden;
 }
 
 body {
