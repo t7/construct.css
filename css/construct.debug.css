@@ -75,7 +75,7 @@ a[target]:not([rel*="noreferrer"]),
 abbr div,
 abbr:not([title]),
 b div,
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr),
+body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr),
 button:not([type]),
 cite div,
 code div,
@@ -142,7 +142,7 @@ a[target]:not([rel*="noreferrer"])::after,
 abbr div::after,
 abbr:not([title])::after,
 b div::after,
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after,
+body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after,
 body link::after,
 body style::after,
 body[style]::before,
@@ -470,9 +470,9 @@ Empty elements.
 ==================================================
 */
 
-body :empty:not([aria-hidden]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after {
+body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after {
   content:
-    'Empty element: Consider [aria-hidden="true"]'
+    'Empty element: Consider [aria-label="text"] if functional, or [aria-hidden="true"] if decorative'
   ;
 }
 
