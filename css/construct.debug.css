@@ -33,7 +33,8 @@ link[href^="http:"],
 script:not([src]),
 script[src]:not([async]),
 script[src^="http:"],
-title:empty {
+title:empty,
+title:not(:first-of-type) {
   display: block;
 
   color: transparent;
@@ -185,6 +186,7 @@ table[role="presentation"] tr:first-child td:first-child::after,
 tbody th[scope]:not([scope="row"])::after,
 thead th[scope]:not([scope="col"])::after,
 title:empty::after,
+title:not(:first-of-type)::after,
 ul > :not(li)::after {
   background: var(--flag-invalid-color);
   color: #fff;
@@ -518,13 +520,24 @@ head > :first-child:not([charset="utf-8"])::after {
 }
 
 /*
-Empty `title`.
+Empty `title` tag.
 =================================================
 */
 
 title:empty::after {
   content:
     "<title> should not be empty"
+  ;
+}
+
+/*
+Multiple `title` tags.
+=================================================
+*/
+
+title:not(:first-of-type)::after {
+  content:
+    "<title> should only exist once per page"
   ;
 }
 
