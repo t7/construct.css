@@ -176,6 +176,7 @@ ol > :not(li)::after,
 p div::after,
 q div::after,
 script:not([src])::after,
+script[defer][async]::after,
 script[defer]:not([async])::after,
 script[src]:not([async])::after,
 script[src^="http:"]::after,
@@ -215,6 +216,7 @@ ul > :not(li)::after {
 body link::after,
 body link[href^="http:"]::after,
 body script:not([src])::after,
+body script[defer][async]::after,
 body script[defer]:not([async])::after,
 body script[src]:not([async])::after,
 body script[src^="http:"]::after,
@@ -560,15 +562,27 @@ script[src]:not([async])::after {
   ;
 }
 
+script[defer][src]:not([async])::after {
+  content:
+    'Instead of [defer], consider moving <script> to before </body>, with [src="' attr(src) '"]'
+  ;
+}
+
 script[defer]:not([async]):not([src])::after {
   content:
     'Instead of [defer], consider moving <script> to before </body>'
   ;
 }
 
-script[defer][src]:not([async])::after {
+script[defer][async][src]::after {
   content:
-    'Instead of [defer], consider moving <script> to before </body>, with [src="' attr(src) '"]'
+    'Using [async] supersedes [defer], behaving as [async] for <script> with [src="' attr(src) '"]'
+  ;
+}
+
+script[defer][async]:not([src])::after {
+  content:
+    'Using [async] supersedes [defer], behaving as [async] for <script>'
   ;
 }
 
