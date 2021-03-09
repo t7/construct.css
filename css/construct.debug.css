@@ -176,6 +176,7 @@ ol > :not(li)::after,
 p div::after,
 q div::after,
 script:not([src])::after,
+script[defer]:not([async])::after,
 script[src]:not([async])::after,
 script[src^="http:"]::after,
 small div::after,
@@ -214,6 +215,7 @@ ul > :not(li)::after {
 body link::after,
 body link[href^="http:"]::after,
 body script:not([src])::after,
+body script[defer]:not([async])::after,
 body script[src]:not([async])::after,
 body script[src^="http:"]::after,
 body style::after {
@@ -548,19 +550,25 @@ Warnings for `script` tags.
 
 script:not([src])::after {
   content:
-    'Move inline <script> to external *.js file'
+    'Consider moving inline <script> to external *.js file'
   ;
 }
 
 script[src]:not([async])::after {
   content:
-    'Consider [async] for <script> with [src="…"]'
+    'Consider [async] for <script> with [src="' attr(src) '"]'
   ;
 }
 
-script[src]:not([src=""]):not([async])::after {
+script[defer]:not([async]):not([src])::after {
   content:
-    'Consider [async] for <script> with [src="' attr(src) '"]'
+    'Instead of [defer], consider moving <script> to before </body>'
+  ;
+}
+
+script[defer][src]:not([async])::after {
+  content:
+    'Instead of [defer], consider moving <script> to before </body>, with [src="' attr(src) '"]'
   ;
 }
 
