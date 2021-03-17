@@ -2,16 +2,24 @@
 
 > "**Construct.css** - Focus on the content and structure of your HTML"
 
-Read more…
+---
 
-https://t7.github.io/construct.css/
+## How to use
+
+Read more about Construct on the demo site, and CSS Tricks article.
+
+- https://t7.github.io/construct.css
+
+- https://css-tricks.com/introducing-trashy-css
 
 ---
 
 ## Prior art
 
-construct.css was inspired by these fine projects:
+Construct.css was inspired by these fine projects.
 
-* https://www.getpapercss.com/
-* https://ffoodd.github.io/a11y.css/
-* https://meyerweb.com/eric/tools/css/diagnostics/
+- https://getpapercss.com
+
+- https://ffoodd.github.io/a11y.css
+
+- https://meyerweb.com/eric/tools/css/diagnostics
